@@ -2,9 +2,129 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Scoccerinfo</title>
+
+    <style>
+
+
+        .list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .list > li {
+            padding: 0;
+        }
+
+        .checkbox {
+            display: none;
+
+        }
+
+        .title {
+            font-weight: bold;
+            padding: 30px;
+            margin: 0;
+            border: 1px dashed black;
+            /*background: yellow;*/
+            cursor: pointer;
+            display: block;
+        }
+
+        .desc {
+            max-height: 0px;
+            overflow: auto;
+            transition: 0.5s;
+        }
+
+        .desc > div {
+            margin: 10px;
+        }
+
+
+        .checkbox:checked + .title + .desc {
+            max-height: 1000px;
+        }
+
+    </style>
+
 </head>
+
+
 <body>
+<div class="top">
+    <h1>SoccerInfo
+        <span style="margin-left: 400px;">MainPage</span>
+    </h1>
+</div>
+
+<ul class="list">
+    <li>
+        <input type="checkbox" class="checkbox" id="expandable-input"/>
+        <label for="expandable-input" class="title">EPL</label>
+
+
+        <div class="desc">
+            The Premier League website employs cookies to make our website work and improve your user experience.
+            Essential
+            cookies are required for the operation of our website. You may disable these but this may affect website
+            functionality. Non-essential cookies help us improve the functionality of our website by collecting
+            information
+            and reporting on your use of the website as well as improving your user experience. You can manage your
+            cookie
+            settings and switch off non-essential cookies via the “Manage Settings” below.
+
+        </div>
+    </li>
+
+    <li>
+        <input type="checkbox" class="checkbox" id="expandable-input2"/>
+        <label for="expandable-input2" class="title">SERIE A</label>
+
+        <div class="desc">
+            The Premier League website employs cookies to make our website work and improve your user experience.
+            Essential
+            cookies are required for the operation of our website. You may disable these but this may affect website
+            functionality. Non-essential cookies help us improve the functionality of our website by collecting
+            information
+            and reporting on your use of the website as well as improving your user experience. You can manage your
+            cookie
+            settings and switch off non-essential cookies via the “Manage Settings” below.
+
+        </div>
+    </li>
+
+    <li>
+        <input type="checkbox" class="checkbox" id="expandable-input3"/>
+        <label for="expandable-input3" class="title">BUNDESLIGA</label>
+        <div class="desc">
+            The Premier League website employs cookies to make our website work and improve your user experience.
+            Essential
+            cookies are required for the operation of our website. You may disable these but this may affect website
+            functionality. Non-essential cookies help us improve the functionality of our website by collecting
+            information
+            and reporting on your use of the website as well as improving your user experience. You can manage your
+            cookie
+            settings and switch off non-essential cookies via the “Manage Settings” below.
+
+        </div>
+    </li>
+
+    <li>
+        <input type="checkbox" class="checkbox" id="expandable-input4"/>
+        <label for="expandable-input4" class="title">LIGUE 1</label>
+        <div class="desc">
+            The Premier League website employs cookies to make our website work and improve your user experience.
+            Essential
+            cookies are required for the operation of our website. You may disable these but this may affect website
+            functionality. Non-essential cookies help us improve the functionality of our website by collecting
+            information
+            and reporting on your use of the website as well as improving your user experience. You can manage your
+            cookie
+            settings and switch off non-essential cookies via the “Manage Settings” below.
+
+        </div>
+    </li>
 
 </body>
 </html>

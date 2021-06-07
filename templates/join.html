@@ -21,10 +21,10 @@
             crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="../static/join.css">
     <script>
-        function register() {
+        function join() {
             $.ajax({
                 type: "POST",
-                url: "api/join",
+                url: "/join/save",
                 data: {
                     name_give: $('#name').val(),
                     id_give: $('#id').val(),
@@ -33,7 +33,7 @@
                 success: function (response) {
                     if (response['result'] == 'success'){
                         alert('회원가입이 완료되었습니다!')
-                        window.location.href = '/login'
+                        window.location.replace("/login")
                     }else{
                         alert(response['msg'])
                     }
@@ -50,7 +50,7 @@
     </h1>
 </div>
 <section class="join-form">
-    <form method="post" id="join-form">
+    <div>
         <div class="int-area">
             <input type="text" name="username" id="name"
                    autocomplete="off" required>
@@ -72,15 +72,15 @@
 <!--            <label for="re_password">비밀번호 재확인</label>-->
 <!--        </div>-->
         <div class="btn-area">
-            <button type="danger" id="btn" class="btn btn-danger">회원가입</button>
+            <button type="danger" id="btn" class="btn btn-danger" onclick="join();">회원가입</button>
         </div>
-    </form>
+    </div>
 </section>
 <script>
     let name = $('#name');
     let id = $('#id');
     let password = $('#password');
-    let re_password = $('#re_password');
+    // let re_password = $('#re_password');
     let btn = $('#btn');
 
     $(btn).on('click', function () {
