@@ -19,8 +19,34 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
     <link rel="stylesheet" type="text/css" href="../static/login.css">
+
     <title>Title</title>
+        <script>
+        {% if msg %}
+            alert("{{ msg }}")
+        {% end if %}
+
+        function login() {
+            $.ajax({
+                type: "POST",
+                url: "api/login",
+                data: {id_give: $('#id').val(), pw_give: $('#password').val()},
+                success: function (response) {
+                    if (response['result'] == 'success'){
+                        $.cookie('mytoken', response['token']);
+
+                        alert('로그인 되었습니다!')
+                        window.location.href = '/'
+                    } else{
+                        alert(response['msg'])
+                    }
+                }
+            })
+        }
+    </script>
 </head>
 
 <body>

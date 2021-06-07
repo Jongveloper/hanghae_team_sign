@@ -20,6 +20,27 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="../static/join.css">
+    <script>
+        function register() {
+            $.ajax({
+                type: "POST",
+                url: "api/join",
+                data: {
+                    name_give: $('#name').val(),
+                    id_give: $('#id').val(),
+                    pw_give: $('#password').val()
+                },
+                success: function (response) {
+                    if (response['result'] == 'success'){
+                        alert('회원가입이 완료되었습니다!')
+                        window.location.href = '/login'
+                    }else{
+                        alert(response['msg'])
+                    }
+                }
+            })
+        }
+    </script>
     <title>회원가입</title>
 </head>
 <body>
@@ -45,11 +66,11 @@
                    autocomplete="off" required>
             <label for="password">비밀번호</label>
         </div>
-        <div class="int-area">
-            <input type="text" name="re_password" id="re_password"
-                   autocomplete="off" required>
-            <label for="re_password">비밀번호 재확인</label>
-        </div>
+<!--        <div class="int-area">-->
+<!--            <input type="text" name="re_password" id="re_password"-->
+<!--                   autocomplete="off" required>-->
+<!--            <label for="re_password">비밀번호 재확인</label>-->
+<!--        </div>-->
         <div class="btn-area">
             <button type="danger" id="btn" class="btn btn-danger">회원가입</button>
         </div>
@@ -78,11 +99,11 @@
             setTimeout(function () {
                 $('label').removeClass('warning');
             }, 1500);
-        } else if ($(re_password).val() == "") {
-            $(re_password).next('label').addClass('warning');
-            setTimeout(function () {
-                $('label').removeClass('warning');
-            }, 1500);
+        // } else if ($(re_password).val() == "") {
+        //     $(re_password).next('label').addClass('warning');
+        //     setTimeout(function () {
+        //         $('label').removeClass('warning');
+        //     }, 1500);
         }
     });
 </script>
