@@ -1,10 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="../static/join.css">
+    <title>회원가입</title>
 </head>
 <body>
-$END$
+<div class="top">
+    <h1>SoccerInfo
+        <span style="margin-left: 400px;">회원가입</span>
+    </h1>
+</div>
+<section class="join-form">
+    <form method="post" id="join-form">
+        <div class="int-area">
+            <input type="text" name="username" id="name"
+                   autocomplete="off" required>
+            <label for="name">이름</label>
+        </div>
+        <div class="int-area">
+            <input type="text" name="userid" id="id"
+                   autocomplete="off" required>
+            <label for="id">아이디</label>
+        </div>
+        <div class="int-area">
+            <input type="password" name="password" id="password"
+                   autocomplete="off" required>
+            <label for="password">비밀번호</label>
+        </div>
+        <div class="int-area">
+            <input type="text" name="re_password" id="re_password"
+                   autocomplete="off" required>
+            <label for="re_password">비밀번호 재확인</label>
+        </div>
+        <div class="btn-area">
+            <button type="danger" id="btn" class="btn btn-danger">회원가입</button>
+        </div>
+    </form>
+</section>
+<script>
+    let name = $('#name');
+    let id = $('#id');
+    let password = $('#password');
+    let re_password = $('#re_password');
+    let btn = $('#btn');
+
+    $(btn).on('click', function () {
+        if ($(name).val() == "") {
+            $(name).next('label').addClass('warning');
+            setTimeout(function () {
+                $('label').removeClass('warning');
+            }, 1500);
+        } else if ($(id).val() == "") {
+            $(id).next('label').addClass('warning');
+            setTimeout(function () {
+                $('label').removeClass('warning');
+            }, 1500);
+        } else if ($(password).val() == "") {
+            $(password).next('label').addClass('warning');
+            setTimeout(function () {
+                $('label').removeClass('warning');
+            }, 1500);
+        } else if ($(re_password).val() == "") {
+            $(re_password).next('label').addClass('warning');
+            setTimeout(function () {
+                $('label').removeClass('warning');
+            }, 1500);
+        }
+    });
+</script>
 </body>
 </html>

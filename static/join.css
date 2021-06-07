@@ -1,0 +1,74 @@
+.top{
+    height: 50px;
+    border-bottom: black solid 2px;
+}
+/* 회원가입 폼*/
+.join-form{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/*회원가입 영역*/
+.int-area{
+    width: 400px;
+    position: relative;
+    margin-top: 20px;
+}
+/*회원가입 input*/
+.int-area:first-child
+{margin-top: 0;}
+.int-area input{
+    width: 100%;
+    padding: 20px 10px 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 18px; color: black;
+    outline: none;
+}
+
+/*회원가입 텍스트*/
+.int-area label{
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    font-size: 18px;
+    color: black;
+    transition: top .5s ease;
+}
+/*회원가입 입력창 미기입시 빨간글씨 표시*/
+.int-area label.warning{
+    color: red !important;
+    animation: warning .3s ease;
+    animation-iteration-count: 3;
+}
+/*회원가입 입력창 미기입시 흔들기*/
+@keyframes warning{
+    0% {transform: translateX(-8px);}
+    25% {transform: translateX(8px);}
+    50% {transform: translateX(-8px);}
+    75% {transform: translateX(8px);}
+}
+/*입력창에 입력하라고 할 시 폰트 위로 올라감*/
+.int-area input:focus + label,
+.int-area input:valid + label{
+    top: -2px;
+    font-size: 13px;
+}
+/*버튼 영역*/
+.btn-area{
+    margin-top: 30px;
+}
+.btn-area button{
+    display: block;
+    margin: auto;
+    width: 50%;
+    height: 50px;
+    font-size: 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
