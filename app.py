@@ -20,7 +20,7 @@ def main():
     try:
         payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
         user_info = db.user.find_one({"id": payload['id']})
-        return render_template('main.html', name=user_info["name"])
+        return render_template('index.html', name=user_info["name"])
     except jwt.ExpiredSignatureError:
         return redirect(url_for("login", msg="로그인 시간이 만료되었습니다."))
     except jwt.exceptions.DecodeError:
@@ -28,11 +28,15 @@ def main():
 
 @app.route('/login')
 def login():
-    return render_template('login.html')
+    msg = request.args.get("msg")
+    return render_template('login.html', msg=msg)
 
 @app.route('/join')
 def join():
     return render_template('join.html')
+@app.route('/main')
+def index():
+    return render_template('index.html')
 
 ############################################
 ## 로그인 ####################################
@@ -62,10 +66,10 @@ def api_login():
 
     if result is not None:
         payload = {
-            'id' : id_receive,
+            'id': id_receive,
             'exp': datetime.datetime.utcnow() + datetime.timedelta(seconds=5)
         }
-        token = jwt.encode(payload, SECRET_KEY, algorithm='HS256').decode('utf-8')
+        token = jwt.encode(payload, SECRET_KEY, algorithm='HS256')
 
         return jsonify({'result': 'success', 'token': token})
     else:
