@@ -28,12 +28,17 @@ def main():
 
 @app.route('/login')
 def login():
-    msg = request.args.get("msg")
-    return render_template('login.html', msg=msg)
+    id = "ID"
+    password = "PassWord"
+    return render_template('login.html', id=id, password=password)
 
 @app.route('/join')
 def join():
-    return render_template('join.html')
+    name= "이름"
+    id = "아이디"
+    password = "비밀번호"
+    re_password = "비밀번호 재확인"
+    return render_template('join.html', name=name, id=id, password=password, re_password=re_password)
 @app.route('/main')
 def index():
     return render_template('index.html')
@@ -59,7 +64,7 @@ def join_save():
         return jsonify({'result':'fail', 'msg': '비밀번호가 일치하지 않습니다.'})
 
     if id_receive == "" or name_receive == "" or pw_receive == "":
-        return jsonify({'result':'fail', 'msg':"모두 입력해주세요!"})
+        return jsonify({'result':'fail', 'msg': "모두 입력해주세요!"})
 
     pw_hash = hashlib.sha256(pw_receive.encode('utf-8')).hexdigest()
 
@@ -88,6 +93,8 @@ def api_login():
         return jsonify({'result': 'success', 'token': token})
     else:
         return jsonify({'result': 'fail', 'msg': '아이디/비밀번호가 일치하지 않습니다.'})
+
+
 
 
 @app.route('/api/name', methods=['GET'])

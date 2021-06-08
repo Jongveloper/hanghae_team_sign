@@ -67,7 +67,9 @@
 <body>
     <div class="top">
         <h1>SoccerInfo
-            <span style="margin-left: 400px;">MainPage</span>
+            <span style="margin-left: 445px;">MainPage</span>
+            <span style="margin-left: 450px; font-size: 20px; color: white;
+             background-color: black; border: 3px solid black; cursor: pointer;" onclick="logout();">로그아웃</span>
         </h1>
     </div>
     <ul class="list">
@@ -118,12 +120,7 @@
                              src="https://cdn.pixabay.com/photo/2018/07/27/19/27/football-3566695_1280.jpg">
                     </div>
                 </div>
-
-
-
-
-
-
+            </div>
         </li>
     </ul>
 
@@ -186,5 +183,10 @@
 </ul>
 </body>
 <script>
+    function logout() {
+        $.removeCookie('mytoken', {path:'/'});
+        alert('로그아웃 되었습니다.')
+        window.location.href = "/login"
+    }
 </script>
 </html>
