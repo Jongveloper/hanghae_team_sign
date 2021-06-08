@@ -31,10 +31,18 @@
 
         function toggle_like(post_id) {
 
+
                 let $a_like = $(`#love a[aria-label='heart']`)
                 let $i_like = $a_like.find("i")
 
                 if ($i_like.hasClass("aaa")) {
+
+                console.log(post_id)
+
+                let $a_like = $(`#love`)
+                let $i_like = $a_like.find("btn")
+                if ($i_like.hasClass("like")) {
+
                     $.ajax({
                         type: "POST",
                         url: "/update_like",
@@ -131,10 +139,13 @@
         </li>
     </ul>
 
-    <a id="love" aria-label='heart' onclick="toggle_like('맨시티')">
-        <i class="aaa">
-            22
-        </i>
+
+
+    <a id="love" aria-label='heart' onclick="toggle_like('맨시')">
+        <btn class="like">
+            👍
+        </btn>
+
     </a>
 
 

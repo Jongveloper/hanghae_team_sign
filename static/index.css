@@ -11,6 +11,10 @@
 .like {
     color: transparent;
     text-shadow: 0 0 2px rgba(255,255,255,.7), 0 0 0 #000;
+    width: 30px;
+    height: 30px;
+    border: 1px solid white;
+    border-radius: 40px;
 }
 .like:hover {
     text-shadow: 0 0 0 #ea0;
