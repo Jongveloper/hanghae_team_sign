@@ -27,8 +27,9 @@
 
         function toggle_like(post_id) {
                 console.log(post_id)
-                let $a_like = $(`#love a[aria-label='heart']`)
-                let $i_like = $a_like.find("button")
+
+                let $a_like = $(`#love`)
+                let $i_like = $a_like.find("btn")
                 if ($i_like.hasClass("like")) {
                     $.ajax({
                         type: "POST",
@@ -126,9 +127,9 @@
     </ul>
 
     <a id="love" aria-label='heart' onclick="toggle_like('맨시')">
-        <button class="like" >
+        <btn class="like">
             👍
-        </button>
+        </btn>
     </a>
 
 

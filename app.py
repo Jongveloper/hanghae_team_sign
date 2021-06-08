@@ -126,8 +126,10 @@ def update_like():
             "post_id": post_id_receive,
             "username": user_info["name"]
         }
+
         if action_receive == "like":
             db.likes.insert_one(doc)
+
         else:
             db.likes.delete_one(doc)
 
@@ -135,7 +137,7 @@ def update_like():
         # 좋아요 수 변경
 
     except (jwt.ExpiredSignatureError, jwt.exceptions.DecodeError):
-        return redirect(url_for("home"))
+        return redirect(url_for("index"))
 
 
 if __name__ == '__main__':
