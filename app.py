@@ -47,6 +47,19 @@ def join_save():
     name_receive = request.form['name_give']
     id_receive = request.form['id_give']
     pw_receive = request.form['pw_give']
+    re_pw_receive = request.form['re_pw_give']
+
+    check_duplicate_user = db.user.find_one({'id': id_receive})
+
+    if check_duplicate_user is not None:
+        if check_duplicate_user['id'] == id_receive:
+            return jsonify({'result': 'fail', 'msg': '아이디가 중복되었습니다.'})
+
+    if pw_receive != re_pw_receive:
+        return jsonify({'result':'fail', 'msg': '비밀번호가 일치하지 않습니다.'})
+
+    if id_receive == "" or name_receive == "" or pw_receive == "":
+        return jsonify({'result':'fail', 'msg':"모두 입력해주세요!"})
 
     pw_hash = hashlib.sha256(pw_receive.encode('utf-8')).hexdigest()
 
