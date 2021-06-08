@@ -1,0 +1,80 @@
+    /*.top{*/
+    /*height: 50px;*/
+    /*border-bottom: black solid 2px;*/
+
+    .list {
+        list-style: none;
+        padding: 50px;
+    }
+
+    /*리스트와 리스트사이 간격*/
+    .list > li {
+        padding: 50px;
+    }
+
+    .checkbox {
+        display: none;
+
+    }
+
+    .title {
+        font-weight: bold;
+        padding: 70px;
+        margin: 0;
+        border: 1px dashed white;
+        /*background: yellow;*/
+        cursor: pointer;
+        display: block;
+    }
+
+    .desc {
+        max-height: 0px;
+        overflow: hidden;
+        transition: 0.5s;
+    }
+
+    .desc > div {
+        margin: 10px;
+    }
+
+
+    .checkbox:checked + .title + .desc {
+        max-height: 1000px;
+    }
+
+    .soccer {
+        display: none;
+    }
+
+    .soccer + label {
+        cursor: pointer;
+        background-repeat: no-repeat;
+        background-size: initial;
+        background-position: center;
+        background-image: url("https://upload.wikimedia.org/wikipedia/ko/thumb/7/73/%ED%94%84%EB%A6%AC%EB%AF%B8%EC%96%B4%EB%A6%AC%EA%B7%B8_%EB%A1%9C%EA%B3%A0.png/250px-%ED%94%84%EB%A6%AC%EB%AF%B8%EC%96%B4%EB%A6%AC%EA%B7%B8_%EB%A1%9C%EA%B3%A0.png");
+    }
+
+    .serie + label {
+        cursor: pointer;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        background-image: url("https://ww.namu.la/s/f8a40544fab8771e9e3fa0210c6f021e259c67339f4550c3edc20c5895c987d0cdc0000340e42ec29fe8598aeef6ec7bdbfdad3aac92b6c1ac1db297f45a5b91dcfa262916fd1978fd2bf69b094c6b5166b6ae34fa98842463bca76310dcaffb");
+    }
+
+    .bundesliga + label {
+        cursor: pointer;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        background-image: url("https://upload.wikimedia.org/wikipedia/ko/thumb/d/df/Bundesliga_logo_%282017%29.svg/1200px-Bundesliga_logo_%282017%29.svg.png");
+    }
+
+    .LIGUE1 + label {
+        cursor: pointer;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        background-image: url("https://upload.wikimedia.org/wikipedia/ko/thumb/d/dd/Ligue_1_Logo.svg/1200px-Ligue_1_Logo.svg.png");
+    }
+

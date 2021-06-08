@@ -4,61 +4,8 @@
     <meta charset="UTF-8">
     <title>Scoccerinfo</title>
 
-    <style>
-
-
-        .list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .list > li {
-            padding: 0;
-        }
-
-        .checkbox {
-            display: none;
-
-        }
-
-        .title {
-            font-weight: bold;
-            padding: 30px;
-            margin: 0;
-            border: 1px dashed black;
-            /*background: yellow;*/
-            cursor: pointer;
-            display: block;
-        }
-
-        .desc {
-            max-height: 0px;
-            overflow: auto;
-            transition: 0.5s;
-        }
-
-        .desc > div {
-            margin: 10px;
-        }
-
-
-        .checkbox:checked + .title + .desc {
-            max-height: 1000px;
-        }
-        .soccer{
-            display: none;
-        }
-        .soccer + label{
-            cursor: pointer;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-image: url("https://cdn.pixabay.com/photo/2015/01/26/22/40/child-613199_1280.jpg");
-        }
-
-    </style>
-
+    <link rel="stylesheet" type="text/css" href="../static/index.css">
 </head>
-
 
 <body>
 <div class="top">
@@ -69,8 +16,23 @@
 <ul class="list">
     <li>
         <input type="checkbox" class="checkbox soccer" id="expandable-input">
-        <label for="expandable-input" class="title">EPL</label>
+        <label for="expandable-input" class="title"></label>
+        <div class="desc">
+            The Premier League website employs cookies to make our website work and improve your user experience.
+            Essential
+            cookies are required for the operation of our website. You may disable these but this may affect website
+            functionality. Non-essential cookies help us improve the functionality of our website by collecting
+            information
+            and reporting on your use of the website as well as improving your user experience. You can manage your
+            cookie
+            settings and switch off non-essential cookies via the “Manage Settings” below.
 
+        </div>
+    </li>
+
+    <li>
+        <input type="checkbox" class="checkbox serie" id="expandable-input2"/>
+        <label for="expandable-input2" class="title"></label>
 
         <div class="desc">
             The Premier League website employs cookies to make our website work and improve your user experience.
@@ -86,9 +48,8 @@
     </li>
 
     <li>
-        <input type="checkbox" class="checkbox" id="expandable-input2"/>
-        <label for="expandable-input2" class="title">SERIE A</label>
-
+        <input type="checkbox" class="checkbox bundesliga" id="expandable-input3"/>
+        <label for="expandable-input3" class="title"></label>
         <div class="desc">
             The Premier League website employs cookies to make our website work and improve your user experience.
             Essential
@@ -103,24 +64,8 @@
     </li>
 
     <li>
-        <input type="checkbox" class="checkbox" id="expandable-input3"/>
-        <label for="expandable-input3" class="title">BUNDESLIGA</label>
-        <div class="desc">
-            The Premier League website employs cookies to make our website work and improve your user experience.
-            Essential
-            cookies are required for the operation of our website. You may disable these but this may affect website
-            functionality. Non-essential cookies help us improve the functionality of our website by collecting
-            information
-            and reporting on your use of the website as well as improving your user experience. You can manage your
-            cookie
-            settings and switch off non-essential cookies via the “Manage Settings” below.
-
-        </div>
-    </li>
-
-    <li>
-        <input type="checkbox" class="checkbox" id="expandable-input4"/>
-        <label for="expandable-input4" class="title">LIGUE 1</label>
+        <input type="checkbox" class="checkbox LIGUE1" id="expandable-input4"/>
+        <label for="expandable-input4" class="title"></label>
         <div class="desc">
             The Premier League website employs cookies to make our website work and improve your user experience.
             Essential
