@@ -136,12 +136,12 @@
 }
 
 .team-logo::-webkit-scrollbar {
-    height: 2px;
-    background-color: whitesmoke;
+    height: 3px;
+    background-color: bisque;
 }
 
 .team-logo::-webkit-scrollbar-thumb {
-    background-color: black;
+    background-color: rebeccapurple;
 }
 
 /*.top{*/
