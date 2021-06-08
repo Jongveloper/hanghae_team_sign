@@ -141,13 +141,7 @@ def update_like():
             "post_id": post_id_receive,
             "username": user_info["name"]
         }
-        name = user_info["name"]
-        user = db.like.find_one({'username': name})
 
-        if name == user["username"]:
-            db.like.delete_one(doc)
-        else:
-            db.like.insert_one(doc)
         # if action_receive == "like":
         #     db.likes.insert_one(doc)
         # else:
