@@ -1,6 +1,23 @@
     /*.top{*/
     /*height: 50px;*/
     /*border-bottom: black solid 2px;*/
+    .tim {
+        display: flex;
+        justify-content: center;
+    }
+
+    .div {
+        width: 500px;
+        height: 200px;
+
+    }
+
+    .comment {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 1px;
+    }
 
     .list {
         list-style: none;
