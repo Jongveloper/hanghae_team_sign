@@ -31,7 +31,7 @@
 </div>
 <ul class="list">
     <li>
-        <input type="checkbox" class="checkbox soccer" id="expandable-input">
+        <input type="checkbox" class="checkbox soccer" id="expandable-input" onclick="like();">
         <label for="expandable-input" class="title"></label>
         <div class="desc">
             The Premier League website employs cookies to make our website work and improve your user experience.
@@ -42,10 +42,43 @@
             and reporting on your use of the website as well as improving your user experience. You can manage your
             cookie
             settings and switch off non-essential cookies via the “Manage Settings” below.
-
+            <div class="team-logo">
+                <div class="logo-list everton" id="everton" style="margin-top: 70px;">
+                    <img class="logo-image"
+                         src="https://cdn.pixabay.com/photo/2018/07/28/20/44/football-3568903_1280.jpg">
+                </div>
+                <div class="logo-list ffc" id="ffc" style="margin-top: 70px;">
+                    <img class="logo-image"
+                         src="https://cdn.pixabay.com/photo/2018/07/28/20/44/football-3568906_1280.jpg">
+                </div>
+                <div class="logo-list leicester" id="leicester" style="margin-top: 70px;">
+                    <img class="logo-image"
+                         src="https://cdn.pixabay.com/photo/2018/07/27/19/25/football-3566688_1280.jpg">
+                </div>
+                <div class="logo-list tottenham" id="tottenham" style="margin-top: 70px;">
+                    <img class="logo-image"
+                         src="https://cdn.pixabay.com/photo/2018/07/27/19/26/football-3566694_1280.jpg">
+                </div>
+                <div class="logo-list wolver" id="wolver" style="margin-top: 70px;">
+                    <img class="logo-image"
+                         src="https://cdn.pixabay.com/photo/2018/07/28/20/45/football-3568910_1280.jpg">
+                </div>
+                <div class="logo-list burnley" id="burnley" style="margin-top: 70px;">
+                    <img class="logo-image"
+                         src="https://cdn.pixabay.com/photo/2018/07/28/20/44/football-3568904_1280.jpg">
+                </div>
+                <div class="logo-list newcastle" id="newcastle" style="margin-top: 70px;">
+                    <img class="logo-image"
+                         src="https://cdn.pixabay.com/photo/2018/07/27/19/26/football-3566693_1280.jpg">
+                </div>
+                <div class="logo-list westham" id="westham" style="margin-top: 70px;">
+                    <img class="logo-image"
+                         src="https://cdn.pixabay.com/photo/2018/07/27/19/27/football-3566695_1280.jpg">
+                </div>
+            </div>
         </div>
         <div id="like" class="tim"
-             style="border-style: solid; border-radius: 10px; width: 1000px; margin: 10px auto; padding: 10px">
+             style="border-style: solid; border-radius: 10px; width: 1000px; margin: 10px auto; padding: 10px;">
             <div class="card mb-3 div" style="border-style: none">
                 <div class="row g-0">
                     <div class="col-md-4">
@@ -123,6 +156,14 @@
 
         </div>
     </li>
-
+</ul>
 </body>
+<script>
+$(document).ready(function (){
+    $('.tim').hide();
+    $('.everton').click(function (){
+        $('.tim').show();
+    });
+});
+</script>
 </html>
