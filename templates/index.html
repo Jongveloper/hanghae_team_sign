@@ -45,6 +45,15 @@
         .checkbox:checked + .title + .desc {
             max-height: 1000px;
         }
+        .soccer{
+            display: none;
+        }
+        .soccer + label{
+            cursor: pointer;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url("https://cdn.pixabay.com/photo/2015/01/26/22/40/child-613199_1280.jpg");
+        }
 
     </style>
 
@@ -60,7 +69,7 @@
 
 <ul class="list">
     <li>
-        <input type="checkbox" class="checkbox" id="expandable-input"/>
+        <input type="checkbox" class="checkbox soccer" id="expandable-input">
         <label for="expandable-input" class="title">EPL</label>
 
 
