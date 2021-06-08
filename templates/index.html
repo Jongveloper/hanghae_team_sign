@@ -13,6 +13,7 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
             integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
             crossorigin="anonymous"></script>
@@ -25,9 +26,10 @@
     <script>
 
         function toggle_like(post_id) {
-                console.log(post_id)
+
                 let $a_like = $(`#love a[aria-label='heart']`)
                 let $i_like = $a_like.find("button")
+
                 if ($i_like.hasClass("like")) {
                     $.ajax({
                         type: "POST",
@@ -38,7 +40,7 @@
                         },
                         success: function (response) {
                             console.log("unlike")
-                            $i_like.addClass("hate").removeClass("like")
+                            $i_like.addclass("like").removeClass("hate")
 
                         }
                     })
@@ -52,13 +54,14 @@
                         },
                         success: function (response) {
                             console.log("like")
-                            $i_like.addClass("like").removeClass("hate")
+                            $i_like.removeClass("like").addClass("hate")
 
                         }
                     })
 
                 }
             }
+
 
     </script>
 
@@ -127,11 +130,15 @@
         </li>
     </ul>
 
-    <a id="love" aria-label='heart' onclick="toggle_like('맨시')">
+    <a id="love" aria-label='heart' onclick="toggle_like('맨시티')">
         <button class="like" >
             like
         </button>
+        <button class="">
+            fdsa
+        </button>
     </a>
+
 
 
 

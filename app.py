@@ -105,6 +105,20 @@ def api_valid():
         return jsonify({'result': 'fail', 'msg' : '로그인 정보가 존재하지 않습니다.'})
 
 
+@app.route("/get_posts", methods=['GET'])
+def get_posts():
+    token_receive = request.cookies.get('mytoken')
+    try:
+        payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
+        posts = list(db.posts.find({}).sort("date", -1).limit(20))
+        for post in posts:
+            post["_id"] = str(post["_id"])
+            post["count_heart"] = db.likes.count_documents({"post_id": post["_id"], "type": "heart"})
+            post["heart_by_me"] = bool(db.likes.find_one({"post_id": post["_id"], "type": "heart", "username": payload['id']}))
+        return jsonify({"result": "success", "msg": "포스팅을 가져왔습니다."})
+    except (jwt.ExpiredSignatureError, jwt.exceptions.DecodeError):
+        return redirect(url_for("home"))
+
 # 좋아요 api
 
 @app.route('/update_like', methods=['POST'])
