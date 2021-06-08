@@ -24,20 +24,25 @@
     <link rel="stylesheet" type="text/css" href="../static/login.css">
 
     <title>Title</title>
-        <script>
 
-
+    <script>
+        {% if msg %}
+            alert("{{ msg }}")
+        {% endif %}
         function login() {
             $.ajax({
                 type: "POST",
                 url: "/api/login",
-                data: {id_give: $('#id').val(), pw_give: $('#password').val()},
+                data: {
+                    id_give: $('#id').val(),
+                    pw_give: $('#password').val()
+                },
                 success: function (response) {
                     if (response['result'] == 'success'){
-                        $.cookie('mytoken', response['token']);
+                        $.cookie('mytoken', response['token'], {path: '/'});
 
                         alert('로그인 되었습니다!')
-                        window.location.href = 'index.html'
+                        window.location.replace("/")
                     } else{
                         alert(response['msg'])
                     }
