@@ -9,11 +9,11 @@
 
         .list {
             list-style: none;
-            padding: 0;
+            padding: 50px;
         }
 
         .list > li {
-            padding: 0;
+            padding: 30px;
         }
 
         .checkbox {
@@ -23,9 +23,9 @@
 
         .title {
             font-weight: bold;
-            padding: 30px;
+            padding: 70px;
             margin: 0;
-            border: 1px dashed black;
+            border: 1px dashed white;
             /*background: yellow;*/
             cursor: pointer;
             display: block;
@@ -33,7 +33,7 @@
 
         .desc {
             max-height: 0px;
-            overflow: auto;
+            overflow: hidden;
             transition: 0.5s;
         }
 
@@ -48,14 +48,35 @@
         .soccer{
             display: none;
         }
+
         .soccer + label{
             cursor: pointer;
             background-repeat: no-repeat;
-            background-size: cover;
-            background-image: url("https://cdn.pixabay.com/photo/2015/01/26/22/40/child-613199_1280.jpg");
+            background-size: initial;
+            background-position: center;
+            background-image: url("https://upload.wikimedia.org/wikipedia/ko/thumb/7/73/%ED%94%84%EB%A6%AC%EB%AF%B8%EC%96%B4%EB%A6%AC%EA%B7%B8_%EB%A1%9C%EA%B3%A0.png/250px-%ED%94%84%EB%A6%AC%EB%AF%B8%EC%96%B4%EB%A6%AC%EA%B7%B8_%EB%A1%9C%EA%B3%A0.png");
         }
-
+         .serie + label{
+            cursor: pointer;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            background-image: url("https://ww.namu.la/s/f8a40544fab8771e9e3fa0210c6f021e259c67339f4550c3edc20c5895c987d0cdc0000340e42ec29fe8598aeef6ec7bdbfdad3aac92b6c1ac1db297f45a5b91dcfa262916fd1978fd2bf69b094c6b5166b6ae34fa98842463bca76310dcaffb");
+        }  .bundesliga + label{
+            cursor: pointer;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            background-image: url("https://upload.wikimedia.org/wikipedia/ko/thumb/d/df/Bundesliga_logo_%282017%29.svg/1200px-Bundesliga_logo_%282017%29.svg.png");
+        }  .LIGUE1 + label{
+            cursor: pointer;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            background-image: url("https://upload.wikimedia.org/wikipedia/ko/thumb/d/dd/Ligue_1_Logo.svg/1200px-Ligue_1_Logo.svg.png");
+        }
     </style>
+
 
 </head>
 
@@ -70,8 +91,23 @@
 <ul class="list">
     <li>
         <input type="checkbox" class="checkbox soccer" id="expandable-input">
-        <label for="expandable-input" class="title">EPL</label>
+        <label for="expandable-input" class="title"></label>
+        <div class="desc">
+            The Premier League website employs cookies to make our website work and improve your user experience.
+            Essential
+            cookies are required for the operation of our website. You may disable these but this may affect website
+            functionality. Non-essential cookies help us improve the functionality of our website by collecting
+            information
+            and reporting on your use of the website as well as improving your user experience. You can manage your
+            cookie
+            settings and switch off non-essential cookies via the “Manage Settings” below.
 
+        </div>
+    </li>
+
+    <li>
+        <input type="checkbox" class="checkbox serie" id="expandable-input2"/>
+        <label for="expandable-input2" class="title"></label>
 
         <div class="desc">
             The Premier League website employs cookies to make our website work and improve your user experience.
@@ -87,9 +123,8 @@
     </li>
 
     <li>
-        <input type="checkbox" class="checkbox" id="expandable-input2"/>
-        <label for="expandable-input2" class="title">SERIE A</label>
-
+        <input type="checkbox" class="checkbox bundesliga" id="expandable-input3"/>
+        <label for="expandable-input3" class="title"></label>
         <div class="desc">
             The Premier League website employs cookies to make our website work and improve your user experience.
             Essential
@@ -104,24 +139,8 @@
     </li>
 
     <li>
-        <input type="checkbox" class="checkbox" id="expandable-input3"/>
-        <label for="expandable-input3" class="title">BUNDESLIGA</label>
-        <div class="desc">
-            The Premier League website employs cookies to make our website work and improve your user experience.
-            Essential
-            cookies are required for the operation of our website. You may disable these but this may affect website
-            functionality. Non-essential cookies help us improve the functionality of our website by collecting
-            information
-            and reporting on your use of the website as well as improving your user experience. You can manage your
-            cookie
-            settings and switch off non-essential cookies via the “Manage Settings” below.
-
-        </div>
-    </li>
-
-    <li>
-        <input type="checkbox" class="checkbox" id="expandable-input4"/>
-        <label for="expandable-input4" class="title">LIGUE 1</label>
+        <input type="checkbox" class="checkbox LIGUE1" id="expandable-input4"/>
+        <label for="expandable-input4" class="title"></label>
         <div class="desc">
             The Premier League website employs cookies to make our website work and improve your user experience.
             Essential
