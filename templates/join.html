@@ -57,22 +57,22 @@
         <div class="int-area">
             <input type="text" name="username" id="name"
                    autocomplete="off" required>
-            <label for="name">이름</label>
+            <label for="name">{{ name }}</label>
         </div>
         <div class="int-area">
             <input type="text" name="userid" id="id"
                    autocomplete="off" required>
-            <label for="id">아이디</label>
+            <label for="id">{{ id }}</label>
         </div>
         <div class="int-area">
             <input type="password" name="password" id="password"
                    autocomplete="off" required>
-            <label for="password">비밀번호</label>
+            <label for="password">{{ password }}</label>
         </div>
         <div class="int-area">
             <input type="password" name="re_password" id="re_password"
                    autocomplete="off" required>
-           <label for="re_password">비밀번호 재확인</label>
+           <label for="re_password">{{ re_password }}</label>
        </div>
         <div class="btn-area">
             <button type="danger" id="btn" class="btn btn-danger" onclick="join();">회원가입</button>

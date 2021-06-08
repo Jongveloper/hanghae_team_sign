@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Scoccerinfo</title>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -23,6 +23,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
     <link rel="stylesheet" type="text/css" href="../static/index.css">
 
+    <title>Scoccerinfo</title>
     <script>
 
         function toggle_like(post_id) {
@@ -70,7 +71,9 @@
 <body>
     <div class="top">
         <h1>SoccerInfo
-            <span style="margin-left: 400px;">MainPage</span>
+            <span style="margin-left: 445px;">MainPage</span>
+            <span style="margin-left: 450px; font-size: 20px; color: white;
+             background-color: black; border: 3px solid black; cursor: pointer;" onclick="logout();">로그아웃</span>
         </h1>
     </div>
     <ul class="list">
@@ -121,18 +124,13 @@
                              src="https://cdn.pixabay.com/photo/2018/07/27/19/27/football-3566695_1280.jpg">
                     </div>
                 </div>
-
-
-
-
-
-
+            </div>
         </li>
     </ul>
 
     <a id="love" aria-label='heart' onclick="toggle_like('맨시티')">
         <button class="like" >
-            like
+            👍
         </button>
         <button class="">
             fdsa
@@ -193,5 +191,14 @@
 </ul>
 </body>
 <script>
+    function logout() {
+        $.removeCookie('mytoken', {path:'/'});
+        alert('로그아웃 되었습니다.')
+        window.location.href = "/login"
+    }
+
+    $(".like").click(function (){
+        $(this).toggleClass("done");
+    })
 </script>
 </html>
