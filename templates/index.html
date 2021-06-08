@@ -9,6 +9,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+        <!-- Font Awesome CSS -->
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -29,9 +32,9 @@
         function toggle_like(post_id) {
 
                 let $a_like = $(`#love a[aria-label='heart']`)
-                let $i_like = $a_like.find("button")
+                let $i_like = $a_like.find("i")
 
-                if ($i_like.hasClass("like")) {
+                if ($i_like.hasClass("aaa")) {
                     $.ajax({
                         type: "POST",
                         url: "/update_like",
@@ -41,7 +44,7 @@
                         },
                         success: function (response) {
                             console.log("unlike")
-                            $i_like.addclass("like").removeClass("hate")
+                            $i_like.addClass("hate").removeClass("aaa")
 
                         }
                     })
@@ -55,7 +58,7 @@
                         },
                         success: function (response) {
                             console.log("like")
-                            $i_like.removeClass("like").addClass("hate")
+                            $i_like.addClass("aaa").removeClass("hate")
 
                         }
                     })
@@ -129,12 +132,9 @@
     </ul>
 
     <a id="love" aria-label='heart' onclick="toggle_like('맨시티')">
-        <button class="like" >
-            👍   
-        </button>
-        <button class="">
-            fdsa
-        </button>
+        <i class="aaa">
+            22
+        </i>
     </a>
 
 

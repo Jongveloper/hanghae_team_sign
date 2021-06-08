@@ -3,6 +3,7 @@ from flask import Flask, render_template, jsonify, request, session, redirect, u
 app = Flask(__name__)
 
 from pymongo import MongoClient
+from werkzeug.utils import secure_filename
 
 client = MongoClient('localhost',27017)
 db= client.sign
@@ -85,7 +86,7 @@ def api_login():
     if result is not None:
         payload = {
             'id': id_receive,
-            'exp': datetime.datetime.utcnow() + datetime.timedelta(seconds=100)
+            'exp': datetime.datetime.utcnow() + datetime.timedelta(seconds=1000)
         }
         # payload 암호화
         token = jwt.encode(payload, SECRET_KEY, algorithm='HS256')
@@ -140,10 +141,17 @@ def update_like():
             "post_id": post_id_receive,
             "username": user_info["name"]
         }
-        if action_receive == "like":
-            db.likes.insert_one(doc)
+        name = user_info["name"]
+        user = db.like.find_one({'username': name})
+
+        if name == user["username"]:
+            db.like.delete_one(doc)
         else:
-            db.likes.delete_one(doc)
+            db.like.insert_one(doc)
+        # if action_receive == "like":
+        #     db.likes.insert_one(doc)
+        # else:
+        #     db.likes.delete_one(doc)
 
         return jsonify({"result": "success", 'msg': 'updated'})
         # 좋아요 수 변경

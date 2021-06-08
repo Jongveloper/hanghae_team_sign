@@ -2,8 +2,12 @@
     height: 50px;
     border-bottom: black solid 2px;
 }
-
-
+.hate{
+    background-color: red;
+}
+.aaa{
+    background-color: blue;
+}
 .like {
     color: transparent;
     text-shadow: 0 0 2px rgba(255,255,255,.7), 0 0 0 #000;
