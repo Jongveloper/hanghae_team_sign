@@ -2,24 +2,13 @@
 /*.top{*/
 /*height: 50px;*/
 /*border-bottom: black solid 2px;*/
-.tim {
-    display: flex;
-    justify-content: center;
+.like {
+    background-color: blue;
 }
 
-.div {
-    width: 500px;
-    height: 200px;
-
+.hate {
+    background-color: red;
 }
-
-.comment {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 1px;
-}
-
 .list {
     list-style: none;
     padding: 50px;
@@ -126,29 +115,6 @@
     /*.top{*/
     /*height: 50px;*/
     /*border-bottom: black solid 2px;*/
-    .tim {
-        display: flex;
-        justify-content: center;
-        margin: 10px;
-    }
-
-    .div2 {
-        width: 600px;
-        height: 200px;
-
-    }
-    .div2 {
-        width: 300px;
-        height: 200px;
-
-    }
-
-    .comment {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        padding: 1px;
-    }
 
     .list {
         list-style: none;
