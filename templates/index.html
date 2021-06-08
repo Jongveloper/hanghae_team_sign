@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Scoccerinfo</title>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -22,6 +22,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
     <link rel="stylesheet" type="text/css" href="../static/index.css">
 
+    <title>Scoccerinfo</title>
     <script>
 
         function toggle_like(post_id) {
@@ -126,7 +127,7 @@
 
     <a id="love" aria-label='heart' onclick="toggle_like('맨시')">
         <button class="like" >
-            like
+            👍
         </button>
     </a>
 
@@ -188,5 +189,9 @@
         alert('로그아웃 되었습니다.')
         window.location.href = "/login"
     }
+
+    $(".like").click(function (){
+        $(this).toggleClass("done");
+    })
 </script>
 </html>
