@@ -31,32 +31,10 @@
 
         function toggle_like(post_id) {
 
-
-                let $a_like = $(`#love a[aria-label='heart']`)
-                let $i_like = $a_like.find("i")
-
-                if ($i_like.hasClass("aaa")) {
-
-                console.log(post_id)
-
                 let $a_like = $(`#love`)
                 let $i_like = $a_like.find("btn")
                 if ($i_like.hasClass("like")) {
-
-                    $.ajax({
-                        type: "POST",
-                        url: "/update_like",
-                        data: {
-                            post_id_give: post_id,
-                            action_give: "unlike"
-                        },
-                        success: function (response) {
-                            console.log("unlike")
-                            $i_like.addClass("hate").removeClass("aaa")
-
-                        }
-                    })
-                } else {
+                    console.log(post_id)
                     $.ajax({
                         type: "POST",
                         url: "/update_like",
@@ -66,7 +44,21 @@
                         },
                         success: function (response) {
                             console.log("like")
-                            $i_like.addClass("aaa").removeClass("hate")
+                            $i_like.addClass("hate").removeClass("like")
+
+                        }
+                    })
+                } else {
+                    $.ajax({
+                        type: "POST",
+                        url: "/update_like",
+                        data: {
+                            post_id_give: post_id,
+                            action_give: "unlike"
+                        },
+                        success: function (response) {
+                            console.log("unlike")
+                            $i_like.addClass("like").removeClass("hate")
 
                         }
                     })
