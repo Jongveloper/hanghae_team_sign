@@ -121,9 +121,10 @@
 .team-logo::-webkit-scrollbar-thumb{
     background-color: black;
 }
-    /*.top{*/
-    /*height: 50px;*/
-    /*border-bottom: black solid 2px;*/
+    .top {
+        height: 50px;
+        border-bottom: black solid 2px;
+    }
     .tim {
         display: flex;
         justify-content: center;
