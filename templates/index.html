@@ -65,56 +65,66 @@
 
             }
         }
+        function team(){
+
+
+
+
+
+        }
 
         function get_posts() {
             $("#post-box").empty()
+            let a = '에버턴 FC'
             $.ajax({
                 type: "GET",
-                url: "/get_posts",
+                url: "/get_posts"+ a,
                 data: {},
                 success: function (response) {
-                    if (response["result"] == "success") {
-                        let posts = response["posts"]
-                        for (let i = 0; i < posts.length; i++) {
-                            let post = posts[i]
-                            let time_post = new Date(post["date"])
-                            let class_heart = ""
-                            if (post["heart_by_me"]) {
-                                class_heart = "fa-heart"
-                            } else {
-                                class_heart = "fa-heart-o"
-                            }
-                            let html_temp = `<div class="box" id="${post["_id"]}">
-                                        <article class="media">
-                                            <div class="media-left">
-                                                <a class="image is-64x64" href="/user/${post['username']}">
-                                                    <img class="is-rounded" src="/static/${post['profile_pic_real']}"
-                                                         alt="Image">
-                                                </a>
-                                            </div>
-                                            <div class="media-content">
-                                                <div class="content">
-                                                    <p>
-                                                        <strong>${post['profile_name']}</strong> <small>@${post['username']}</small> <small>${time_post}</small>
-                                                        <br>
-                                                        ${post['comment']}
-                                                    </p>
-                                                </div>
-                                                <nav class="level is-mobile">
-                                                    <div class="level-left">
-                                                        <a class="level-item is-sparta" aria-label="heart" onclick="toggle_like('${post['_id']}', 'heart')">
-                                                            <span class="icon is-small"><i class="fa fa-heart"
-                                                                                           aria-hidden="true"></i></span>&nbsp;<span class="like-num">2.7k</span>
-                                                        </a>
-                                                    </div>
-
-                                                </nav>
-                                            </div>
-                                        </article>
-                                    </div>`
-                            $("#post-box").append(html_temp)
-                        }
-                    }
+                    let a = response["rec"]
+                    console.log(a)
+                    // if (response["result"] == "success") {
+                    //     let posts = response["posts"]
+                    //     for (let i = 0; i < posts.length; i++) {
+                    //         let post = posts[i]
+                    //         let time_post = new Date(post["date"])
+                    //         let class_heart = ""
+                    //         if (post["heart_by_me"]) {
+                    //             class_heart = "fa-heart"
+                    //         } else {
+                    //             class_heart = "fa-heart-o"
+                    //         }
+                    //         let html_temp = `<div class="box" id="${post["_id"]}">
+                    //                     <article class="media">
+                    //                         <div class="media-left">
+                    //                             <a class="image is-64x64" href="/user/${post['username']}">
+                    //                                 <img class="is-rounded" src="/static/${post['profile_pic_real']}"
+                    //                                      alt="Image">
+                    //                             </a>
+                    //                         </div>
+                    //                         <div class="media-content">
+                    //                             <div class="content">
+                    //                                 <p>
+                    //                                     <strong>${post['profile_name']}</strong> <small>@${post['username']}</small> <small>${time_post}</small>
+                    //                                     <br>
+                    //                                     ${post['comment']}
+                    //                                 </p>
+                    //                             </div>
+                    //                             <nav class="level is-mobile">
+                    //                                 <div class="level-left">
+                    //                                     <a class="level-item is-sparta" aria-label="heart" onclick="toggle_like('${post['_id']}', 'heart')">
+                    //                                         <span class="icon is-small"><i class="fa fa-heart"
+                    //                                                                        aria-hidden="true"></i></span>&nbsp;<span class="like-num">2.7k</span>
+                    //                                     </a>
+                    //                                 </div>
+                    //
+                    //                             </nav>
+                    //                         </div>
+                    //                     </article>
+                    //                 </div>`
+                    //         $("#post-box").append(html_temp)
+                    //     }
+                    // }
                 }
             })
         }
@@ -136,14 +146,10 @@
         </h1>
     </div>
 
+<button onclick="get_posts()">
+    fdsa
+</button>
 
-
-    <a id="love" aria-label='heart' onclick="toggle_like('맨시') get_posts()">
-        <btn class="like">
-            👍
-        </btn>
-
-    </a>
 
 
 
@@ -166,11 +172,11 @@
 
             <div class="team-logo">
                 <div class="team">
-                    <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('에버튼')">
+                    <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('에버턴 FC')">
                         <btn class="like">
                             👍
                         </btn>
-                    </a>
+                   </a>
                     <div class="logo-list everton" id="everton">
                         <img class="logo-image"
                              src="https://cdn.pixabay.com/photo/2018/07/28/20/44/football-3568903_1280.jpg">
@@ -259,11 +265,7 @@
 </ul>
 
 
-<a id="love" aria-label='heart' onclick="toggle_like('맨시')">
-    <btn class="like">
-        👍
-    </btn>
-</a>
+
 
 <ul class="list">
     <li>
