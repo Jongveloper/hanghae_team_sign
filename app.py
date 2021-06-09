@@ -150,6 +150,7 @@ def update_like():
     token_receive = request.cookies.get('mytoken')
     try:
         payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
+        print(payload)
         user_info = db.user.find_one({"id": payload["id"]})
         post_id_receive = request.form["post_id_give"]
         action_receive = request.form["action_give"]
@@ -157,7 +158,7 @@ def update_like():
         doc = {
             "post_id": post_id_receive,
             "id": user_info["id"],
-            # "league": league["league"]
+            "league": league["league"]
         }
 
 
