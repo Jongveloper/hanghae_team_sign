@@ -184,7 +184,7 @@ def update_like():
             db.likes.delete_one(doc)
 
         count = db.likes.count_documents({"post_id": post_id_receive})
-        
+
 
         return jsonify({"result": "success", 'msg': 'updated',  "count": count})
         # 좋아요 수 변경
