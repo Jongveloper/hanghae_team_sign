@@ -1,20 +1,25 @@
 * {
     font-family: '동해 독도', 필기체;
 }
-.wrap{
+
+.wrap {
     width: 1200px;
     margin: auto;
 }
+
 .top {
     height: 50px;
     border-bottom: black solid 2px;
 }
-.top-text{
+
+.top-text {
     margin-left: 460px;
 }
-.top-wrap{
+
+.top-wrap {
     width: 100%;
 }
+
 .hate {
     background-color: red;
 }
@@ -133,7 +138,7 @@
 }
 
 .team-logo {
-    width: 1200px;
+    width: 1000px;
     height: 250px;
     white-space: nowrap;
     overflow-x: scroll;
@@ -154,8 +159,9 @@
 }
 
 .team-logo::-webkit-scrollbar {
-    height: 3px;
+    height: 4px;
     background-color: bisque;
+    
 }
 
 .team-logo::-webkit-scrollbar-thumb {
@@ -163,7 +169,7 @@
 }
 
 .team-logo-italy {
-    width: 1200px;
+    width: 1000px;
     height: 250px;
     white-space: nowrap;
     overflow-x: scroll;
@@ -174,12 +180,52 @@
     margin-left: 30px;
     width: 150px;
 }
+
 .team-logo-italy::-webkit-scrollbar {
-    height: 3px;
+    height: 4px;
     background-color: bisque;
 }
+
 .team-logo-italy::-webkit-scrollbar-thumb {
     background-color: deepskyblue;
+}
+
+.team-logo-bundesliga {
+    width: 1000px;
+    height: 250px;
+    white-space: nowrap;
+    overflow-x: scroll;
+}
+
+.team-logo-bundesliga > div {
+    display: inline-block;
+    margin-left: 30px;
+    width: 150px;
+}
+.team-logo-bundesliga::-webkit-scrollbar{
+    height: 4px;
+    background-color: bisque;
+}
+.team-logo-bundesliga::-webkit-scrollbar-thumb{
+    background-color: crimson;
+}
+.team-logo-one{
+    widht: 1000px;
+    height: 250px;
+    white-space: nowrap;
+    overflow-x: scroll;
+}
+.team-logo-one > div{
+    display: inline-block;
+    margin-left: 30px;
+    width: 150px;
+}
+.team-logo-one::-webkit-scrollbar{
+    height: 4px;
+    background-color: bisque;
+}
+.team-logo-one::-webkit-scrollbar-thumb{
+    background-color: lawngreen;
 }
 
 /*.top{*/

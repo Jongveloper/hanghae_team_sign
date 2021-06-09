@@ -34,21 +34,18 @@
     <script>
 
         function toggle_like(post_id) {
-
-                let str1 = post_id
-                let d = str1.replace(/(\s*)/g, "")
-
-
+            let str1 = post_id
+            let d = str1.replace(/(\s*)/g, "")
             let $a_like = $(`#${d}`)
             let $i_like = $a_like.find("btn")
-            if ($i_like.hasClass("like")) {
+            if ($('i_like').hasClass("like")) {
                 console.log(post_id)
                 $.ajax({
                     type: "POST",
                     url: "/update_like",
                     data: {
                         post_id_give: post_id,
-                        action_give: "like"
+                        action_give: "unlike"
                     },
                     success: function (response) {
                         console.log("like")
@@ -63,7 +60,7 @@
                     url: "/update_like",
                     data: {
                         post_id_give: post_id,
-                        action_give: "unlike"
+                        action_give: "like"
                     },
                     success: function (response) {
 
@@ -174,7 +171,7 @@
     <ul class="list">
 
         <li>
-            <input type="checkbox" class="checkbox soccer" id="expandable-input" onclick="like();">
+            <input type="checkbox" class="checkbox soccer" id="expandable-input">
             <label for="expandable-input" class="title"></label>
             <div class="desc">
                 The Premier League website employs cookies to make our website work and improve your user experience.
@@ -402,7 +399,96 @@
                 and reporting on your use of the website as well as improving your user experience. You can manage your
                 cookie
                 settings and switch off non-essential cookies via the “Manage Settings” below.
-
+                <div class="team-logo-bundesliga">
+                    <div class="team">
+                        <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('뮌헨')">
+                            <btn class="like">
+                                👍
+                            </btn>
+                        </a>
+                        <div class="logo-list bayern" id="bayern">
+                            <img class="logo-image"
+                                 src="https://cdn.pixabay.com/photo/2017/08/30/16/01/football-2697618_1280.jpg">
+                        </div>
+                    </div><!--뮌헨(bayern)-->
+                    <div class="team">
+                        <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('라이프치히')">
+                            <btn class="like">
+                                👍
+                            </btn>
+                        </a>
+                        <div class="logo-list life" id="life">
+                            <img class="logo-image"
+                                 src="https://cdn.pixabay.com/photo/2017/08/30/16/57/football-2697843_1280.jpg">
+                        </div>
+                    </div><!--라이프치히-->
+                    <div class="team">
+                        <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('도르트문트')">
+                            <btn class="like">
+                                👍
+                            </btn>
+                        </a>
+                        <div class="logo-list dor" id="dor">
+                            <img class="logo-image"
+                                 src="https://cdn.pixabay.com/photo/2017/08/30/16/00/football-2697615_1280.jpg">
+                        </div>
+                    </div><!--도르트문트(dor)-->
+                    <div class="team">
+                        <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('레버쿠젠')">
+                            <btn class="like">
+                                👍
+                            </btn>
+                        </a>
+                        <div class="logo-list bayer" id="bayer">
+                            <img class="logo-image"
+                                 src="https://cdn.pixabay.com/photo/2017/11/23/06/19/flag-2972108_1280.jpg">
+                        </div>
+                    </div><!--레버쿠젠-->
+                    <div class="team">
+                        <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('프랑크푸르트')">
+                            <btn class="like">
+                                👍
+                            </btn>
+                        </a>
+                        <div class="logo-list frank" id="frank">
+                            <img class="logo-image"
+                                 src="https://cdn.pixabay.com/photo/2017/11/23/06/20/flag-2972113_1280.jpg">
+                        </div>
+                    </div><!--프랑크푸르트-->
+                    <div class="team">
+                        <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('베를린')">
+                            <btn class="like">
+                                👍
+                            </btn>
+                        </a>
+                        <div class="logo-list berlin" id="berlin">
+                            <img class="logo-image"
+                                 src="https://cdn.pixabay.com/photo/2017/11/24/06/30/flag-2974194_1280.jpg">
+                        </div>
+                    </div><!--베를린-->
+                    <div class="team">
+                        <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('슈투르가르트')">
+                            <btn class="like">
+                                👍
+                            </btn>
+                        </a>
+                        <div class="logo-list suit" id="suit">
+                            <img class="logo-image"
+                                 src="https://cdn.pixabay.com/photo/2017/11/23/06/22/flag-2972121_1280.jpg">
+                        </div>
+                    </div><!--슈투르가르트 (suit)-->
+                    <div class="team">
+                        <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('샬케')">
+                            <btn class="like">
+                                👍
+                            </btn>
+                        </a>
+                        <div class="logo-list sk" id="sk">
+                            <img class="logo-image"
+                                 src="https://cdn.pixabay.com/photo/2017/11/23/06/22/flag-2972122_1280.jpg">
+                        </div>
+                    </div><!--샬케(sk)-->
+                </div>
             </div>
         </li>
     </ul>
@@ -419,7 +505,96 @@
                 and reporting on your use of the website as well as improving your user experience. You can manage your
                 cookie
                 settings and switch off non-essential cookies via the “Manage Settings” below.
-
+                <div class="team-logo-one">
+                    <div class="team">
+                        <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('모나코')">
+                            <btn class="like">
+                                👍
+                            </btn>
+                        </a>
+                        <div class="logo-list monaco" id="monaco">
+                            <img class="logo-image"
+                                 src="https://cdn.pixabay.com/photo/2017/08/30/23/40/football-2698963_1280.jpg">
+                        </div>
+                    </div><!--모나코-->
+                    <div class="team">
+                        <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('paris')">
+                            <btn class="like">
+                                👍
+                            </btn>
+                        </a>
+                        <div class="logo-list paris" id="paris">
+                            <img class="logo-image"
+                                 src="https://cdn.pixabay.com/photo/2017/08/30/16/52/football-2697825_1280.jpg">
+                        </div>
+                    </div><!--파리생제르맹(paris)-->
+                    <div class="team">
+                        <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('olym')">
+                            <btn class="like">
+                                👍
+                            </btn>
+                        </a>
+                        <div class="logo-list olym" id="olym">
+                            <img class="logo-image"
+                                 src="https://cdn.pixabay.com/photo/2018/07/31/10/37/football-3574718_1280.jpg">
+                        </div>
+                    </div><!--올림피크리옹-->
+                    <div class="team">
+                        <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('생티에텐')">
+                            <btn class="like">
+                                👍
+                            </btn>
+                        </a>
+                        <div class="logo-list saint" id="saint">
+                            <img class="logo-image"
+                                 src="https://cdn.pixabay.com/photo/2018/07/31/10/39/football-3574733_1280.jpg">
+                        </div>
+                    </div><!--생티에텐(saint)-->
+                    <div class="team">
+                        <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('앙제')">
+                            <btn class="like">
+                                👍
+                            </btn>
+                        </a>
+                        <div class="logo-list sco" id="sco">
+                            <img class="logo-image"
+                                 src="https://cdn.pixabay.com/photo/2018/07/31/10/39/football-3574734_1280.jpg">
+                        </div>
+                    </div><!--앙제(sco)-->
+                    <div class="team">
+                        <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('낭트')">
+                            <btn class="like">
+                                👍
+                            </btn>
+                        </a>
+                        <div class="logo-list nant" id="nant">
+                            <img class="logo-image"
+                                 src="https://cdn.pixabay.com/photo/2018/07/29/23/31/football-3571389_1280.jpg">
+                        </div>
+                    </div><!--낭트(nant)-->
+                    <div class="team">
+                        <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('몽펠리에')">
+                            <btn class="like">
+                                👍
+                            </btn>
+                        </a>
+                        <div class="logo-list mong" id="mong">
+                            <img class="logo-image"
+                                 src="https://cdn.pixabay.com/photo/2018/07/31/10/37/football-3574720_1280.jpg">
+                        </div>
+                    </div><!--몽펠리에 (mong)-->
+                    <div class="team">
+                        <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('아미엥')">
+                            <btn class="like">
+                                👍
+                            </btn>
+                        </a>
+                        <div class="logo-list ami" id="ami">
+                            <img class="logo-image"
+                                 src="https://cdn.pixabay.com/photo/2018/07/29/23/31/football-3571391_1280.jpg">
+                        </div>
+                    </div><!--아미엥(ami)-->
+                </div>
             </div>
         </li>
     </ul>
