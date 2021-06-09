@@ -22,4 +22,3 @@ for team in team_rank_list:
 
  name = team.select('.name')[0].text
  print(num, name)
-
