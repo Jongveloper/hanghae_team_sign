@@ -44,8 +44,7 @@
                 success: function (response) {
                     let post_id = response["post_id"]
 
-                    for (let i = 0; i < post_id.length; i++)
-                    {
+                    for (let i = 0; i < post_id.length; i++) {
 
                         let str1 = post_id[i]
                         let d = str1.replace(/(\s*)/g, "")
@@ -71,7 +70,6 @@
 
             let $a_like = $(`#${d}`)
             let $i_like = $a_like.find("btn")
-
 
 
             if ($i_like.hasClass("like")) {
@@ -110,11 +108,6 @@
 
             }
         }
-
-
-
-
-
 
 
     </script>
@@ -249,6 +242,20 @@
             </div>
         </li>
     </ul><!--프리미어 리그-->
+    <table>
+        <thead>
+        <tr>
+            <th scope="col">순위</th>
+            <th scope="col">리그</th>
+            <th scope="col">팀명</th>
+        </tr>
+        </thead>
+
+        <tbody id="rank-box">
+        <tr>
+        </tr>
+        </tbody>
+    </table>
     <ul class="list">
         <li>
             <input type="checkbox" class="checkbox serie" id="expandable-input2"/>
@@ -604,7 +611,7 @@
 </body>
 <script>
 
-     function logout() {
+    function logout() {
         $.removeCookie('mytoken', {path: '/'});
         alert('로그아웃 되었습니다.')
         window.location.href = "/login"
@@ -615,22 +622,30 @@
     })
 
 
-      function get_ranking() {
+    function get_ranking() {
+        $.ajax({
+            type: "GET",
+            url: '/ranking',
+            data: {},
+            success: function (response) {
+                let teams = response["ranking_list"];
+                console.log(teams)
+                for (let i = 0; i < teams.length; i++) {
+                    let lank = teams[i]['lank'];
+                    let t_name = teams[i]['t_name'];
+                    let league = teams[i]['league'];
 
-      $.ajax({
-        type: "GET",
-        url: '/ranking',
-        data: {},
-        success: function (response) {
-            let teams = response["ranking_list"]
-            for (let i = 0; i < teams.length; i++) {
-                let ranking = teams[i]
-                console.log(ranking)
+                    let temp_html = `<tr>
+                                        <td>${lank}</td>
+                                        <td>${league}</td>
+                                        <td>${t_name}</td>
+                                    </tr>`
+                    $('#rank-box').append(temp_html)
+
+                }
             }
-        }
-    });
-}
-
+        });
+    }
 
 
 </script>
