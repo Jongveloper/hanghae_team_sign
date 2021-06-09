@@ -43,6 +43,5 @@ for team in team_rank_list:
         }
         db.teams.insert_one(doc)
 
- name = team.select('.name')[0].text
- print(num, name)
+
 
