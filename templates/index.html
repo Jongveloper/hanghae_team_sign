@@ -230,35 +230,84 @@
                         <img class="logo-image"
                              src="https://cdn.pixabay.com/photo/2018/07/28/20/44/football-3568903_1280.jpg">
                     </div>
-                </div>
-                <div class="logo-list ffc" id="ffc" style="margin-top: 70px;">
-                    <img class="logo-image"
-                         src="https://cdn.pixabay.com/photo/2018/07/28/20/44/football-3568906_1280.jpg">
-                </div>
-                <div class="logo-list leicester" id="leicester" style="margin-top: 70px;">
-                    <img class="logo-image"
-                         src="https://cdn.pixabay.com/photo/2018/07/27/19/25/football-3566688_1280.jpg">
-                </div>
-                <div class="logo-list tottenham" id="tottenham" style="margin-top: 70px;">
-                    <img class="logo-image"
-                         src="https://cdn.pixabay.com/photo/2018/07/27/19/26/football-3566694_1280.jpg">
-                </div>
-                <div class="logo-list wolver" id="wolver" style="margin-top: 70px;">
-                    <img class="logo-image"
-                         src="https://cdn.pixabay.com/photo/2018/07/28/20/45/football-3568910_1280.jpg">
-                </div>
-                <div class="logo-list burnley" id="burnley" style="margin-top: 70px;">
-                    <img class="logo-image"
-                         src="https://cdn.pixabay.com/photo/2018/07/28/20/44/football-3568904_1280.jpg">
-                </div>
-                <div class="logo-list newcastle" id="newcastle" style="margin-top: 70px;">
-                    <img class="logo-image"
-                         src="https://cdn.pixabay.com/photo/2018/07/27/19/26/football-3566693_1280.jpg">
-                </div>
-                <div class="logo-list westham" id="westham" style="margin-top: 70px;">
-                    <img class="logo-image"
-                         src="https://cdn.pixabay.com/photo/2018/07/27/19/27/football-3566695_1280.jpg">
-                </div>
+                </div><!--에버튼-->
+                <div class="team">
+                    <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('ffc')">
+                        <btn class="like">
+                            👍
+                        </btn>
+                    </a>
+                    <div class="logo-list ffc" id="ffc">
+                        <img class="logo-image"
+                             src="https://cdn.pixabay.com/photo/2018/07/28/20/44/football-3568906_1280.jpg">
+                    </div>
+                </div><!--ffc-->
+                <div class="team">
+                    <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('leicester')">
+                        <btn class="like">
+                            👍
+                        </btn>
+                    </a>
+                    <div class="logo-list leicester" id="leicester">
+                        <img class="logo-image"
+                             src="https://cdn.pixabay.com/photo/2018/07/27/19/25/football-3566688_1280.jpg">
+                    </div>
+                </div><!--leicester-->
+                <div class="team">
+                    <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('토트넘')">
+                        <btn class="like">
+                            👍
+                        </btn>
+                    </a>
+                    <div class="logo-list tottenham" id="tottenham">
+                        <img class="logo-image"
+                             src="https://cdn.pixabay.com/photo/2018/07/27/19/26/football-3566694_1280.jpg">
+                    </div>
+                </div><!--tottenham-->
+                <div class="team">
+                    <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('wolver')">
+                        <btn class="like">
+                            👍
+                        </btn>
+                    </a>
+                    <div class="logo-list wolver" id="wolver">
+                        <img class="logo-image"
+                             src="https://cdn.pixabay.com/photo/2018/07/28/20/45/football-3568910_1280.jpg">
+                    </div>
+                </div><!--wolver-->
+                <div class="team">
+                    <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('번리')">
+                        <btn class="like">
+                            👍
+                        </btn>
+                    </a>
+                    <div class="logo-list burnley" id="burnley">
+                        <img class="logo-image"
+                             src="https://cdn.pixabay.com/photo/2018/07/28/20/44/football-3568904_1280.jpg">
+                    </div>
+                </div><!--burnley-->
+                <div class="team">
+                    <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('뉴캐슬')">
+                        <btn class="like">
+                            👍
+                        </btn>
+                    </a>
+                    <div class="logo-list newcastle" id="newcastle">
+                        <img class="logo-image"
+                             src="https://cdn.pixabay.com/photo/2018/07/27/19/26/football-3566693_1280.jpg">
+                    </div>
+                </div><!--newcastle-->
+                <div class="team">
+                    <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('웨스트햄')">
+                        <btn class="like">
+                            👍
+                        </btn>
+                    </a>
+                    <div class="logo-list westham" id="westham">
+                        <img class="logo-image"
+                             src="https://cdn.pixabay.com/photo/2018/07/27/19/27/football-3566695_1280.jpg">
+                    </div>
+                </div><!--westham-->
             </div>
         </div>
     </li>
@@ -272,56 +321,56 @@
 </a>
 
 <ul class="list">
-<li>
-    <input type="checkbox" class="checkbox serie" id="expandable-input2"/>
-    <label for="expandable-input2" class="title"></label>
+    <li>
+        <input type="checkbox" class="checkbox serie" id="expandable-input2"/>
+        <label for="expandable-input2" class="title"></label>
 
-    <div class="desc">
-        The Premier League website employs cookies to make our website work and improve your user experience.
-        Essential
-        cookies are required for the operation of our website. You may disable these but this may affect website
-        functionality. Non-essential cookies help us improve the functionality of our website by collecting
-        information
-        and reporting on your use of the website as well as improving your user experience. You can manage your
-        cookie
-        settings and switch off non-essential cookies via the “Manage Settings” below.
+        <div class="desc">
+            The Premier League website employs cookies to make our website work and improve your user experience.
+            Essential
+            cookies are required for the operation of our website. You may disable these but this may affect website
+            functionality. Non-essential cookies help us improve the functionality of our website by collecting
+            information
+            and reporting on your use of the website as well as improving your user experience. You can manage your
+            cookie
+            settings and switch off non-essential cookies via the “Manage Settings” below.
 
-    </div>
-</li>
+        </div>
+    </li>
 </ul>
 <ul class="list">
-<li>
-    <input type="checkbox" class="checkbox bundesliga" id="expandable-input3"/>
-    <label for="expandable-input3" class="title"></label>
-    <div class="desc">
-        The Premier League website employs cookies to make our website work and improve your user experience.
-        Essential
-        cookies are required for the operation of our website. You may disable these but this may affect website
-        functionality. Non-essential cookies help us improve the functionality of our website by collecting
-        information
-        and reporting on your use of the website as well as improving your user experience. You can manage your
-        cookie
-        settings and switch off non-essential cookies via the “Manage Settings” below.
+    <li>
+        <input type="checkbox" class="checkbox bundesliga" id="expandable-input3"/>
+        <label for="expandable-input3" class="title"></label>
+        <div class="desc">
+            The Premier League website employs cookies to make our website work and improve your user experience.
+            Essential
+            cookies are required for the operation of our website. You may disable these but this may affect website
+            functionality. Non-essential cookies help us improve the functionality of our website by collecting
+            information
+            and reporting on your use of the website as well as improving your user experience. You can manage your
+            cookie
+            settings and switch off non-essential cookies via the “Manage Settings” below.
 
-    </div>
-</li>
+        </div>
+    </li>
 </ul>
 <ul class="list">
-<li>
-    <input type="checkbox" class="checkbox LIGUE1" id="expandable-input4"/>
-    <label for="expandable-input4" class="title"></label>
-    <div class="desc">
-        The Premier League website employs cookies to make our website work and improve your user experience.
-        Essential
-        cookies are required for the operation of our website. You may disable these but this may affect website
-        functionality. Non-essential cookies help us improve the functionality of our website by collecting
-        information
-        and reporting on your use of the website as well as improving your user experience. You can manage your
-        cookie
-        settings and switch off non-essential cookies via the “Manage Settings” below.
+    <li>
+        <input type="checkbox" class="checkbox LIGUE1" id="expandable-input4"/>
+        <label for="expandable-input4" class="title"></label>
+        <div class="desc">
+            The Premier League website employs cookies to make our website work and improve your user experience.
+            Essential
+            cookies are required for the operation of our website. You may disable these but this may affect website
+            functionality. Non-essential cookies help us improve the functionality of our website by collecting
+            information
+            and reporting on your use of the website as well as improving your user experience. You can manage your
+            cookie
+            settings and switch off non-essential cookies via the “Manage Settings” below.
 
-    </div>
-</li>
+        </div>
+    </li>
 </ul>
 </body>
 <script>
