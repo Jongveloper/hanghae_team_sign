@@ -1,5 +1,6 @@
 from flask import Flask, render_template, jsonify, request, session, redirect, url_for
 
+
 app = Flask(__name__)
 from pymongo import MongoClient
 
@@ -7,6 +8,7 @@ from pymongo import MongoClient
 client = MongoClient('localhost',27017)
 db= client.sign
 SECRET_KEY = 'hanghae11team'
+
 import jwt
 import datetime
 import hashlib
@@ -117,17 +119,25 @@ def get_posts():
     token_receive = request.cookies.get('mytoken')
     try:
         payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
+        print(payload)
         teams = list(db.teams.find({}))
-        a = 0
-        for team in teams:
-            print(team)
-            # if bool(db.likes.find_one({"post_id":teams["t_name"]})):
-            #     team["count_like"] = a
-            #     team["count_like"] += 1
-            #
-            # team["team_name"] = teams["t_name"]
 
-        return jsonify({"result": "success", "msg": "포스팅을 가져왔습니다.", "team": team})
+        for team in teams:
+            a = 0
+            like = list(db.likes.find({"post_id": team["t_name"]}))
+            for count in like:
+                    a += 1
+            team["count"] = str(a)
+
+
+            # if bool(db.like.find_one({'name': team["t_name"]})):
+            #
+            #     db.like.update_one({'name': team["t_name"]}, {'$set': {'count': a}})
+            # else:
+            #     doc = {'count': a, 'name': team["t_name"]}
+            #     db.like.insert_one(doc)
+        print(teams)
+        return jsonify({"result": "success", "msg": "포스팅을 가져왔습니다.", "data": teams})
     except (jwt.ExpiredSignatureError, jwt.exceptions.DecodeError):
         return redirect(url_for("login"))
 
@@ -142,7 +152,7 @@ def update_like():
         user_info = db.user.find_one({"id": payload["id"]})
         post_id_receive = request.form["post_id_give"]
         action_receive = request.form["action_give"]
-        league = db.teams.find_one({'t_name': post_id_receive})
+        league = db.teams.find_one({"t_name": post_id_receive})
         doc = {
             "post_id": post_id_receive,
             "id": user_info["id"],
