@@ -20,8 +20,11 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2? family = East + Sea + Dokdo & display = swap" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="../static/login.css">
+    <link rel="stylesheet" media="screen and (min-width: 1200px)" href="../static/login_1200px.css"/>
 
     <title>Title</title>
 
@@ -38,12 +41,12 @@
                     pw_give: $('#password').val()
                 },
                 success: function (response) {
-                    if (response['result'] == 'success'){
+                    if (response['result'] == 'success') {
                         $.cookie('mytoken', response['token'], {path: '/'});
 
                         alert('로그인 되었습니다!')
                         window.location.replace("/")
-                    } else{
+                    } else {
                         alert(response['msg'])
                     }
                 }
@@ -55,7 +58,7 @@
 <body>
 <div class="top">
     <h1 style="color: white;">SoccerInfo
-        <span style="margin-left: 400px; color: white;">Login page</span>
+        <span class="top-text" style="color: white;">Login page</span>
     </h1>
 </div>
 <section class="login-form">
@@ -75,9 +78,11 @@
                    autocomplete="off" required>
             <label for="id">{{ password }}</label>
         </div>
-        <div class = "btn-area">
+        <div class="btn-area">
             <button type="danger" id="btn" class="btn btn-danger" onclick="login();">로그인</button>
-            <button type="primary" id="join-btn" class="btn btn-primary" style="margin-top: 20px;"  onclick="location.href='join'">회원가입</button>
+            <button type="primary" id="join-btn" class="btn btn-primary" style="margin-top: 20px;"
+                    onclick="location.href='join'">회원가입
+            </button>
 
         </div>
     </div>
@@ -87,18 +92,18 @@
     let pw = $('#password');
     let btn = $('#btn');
 
-    $(btn).on('click', function (){
-        if ($(id).val()=="") {
+    $(btn).on('click', function () {
+        if ($(id).val() == "") {
             $(id).next('label').addClass('warning');
-            setTimeout(function (){
+            setTimeout(function () {
                 $('label').removeClass('warning');
-            },1500);
-        } else if ($(pw).val() =="") {
+            }, 1500);
+        } else if ($(pw).val() == "") {
             $(pw).next('label').addClass('warning');
-            setTimeout(function (){
+            setTimeout(function () {
                 $('label').removeClass('warning');
-            },1500);
-    }
+            }, 1500);
+        }
     });
 </script>
 </body>

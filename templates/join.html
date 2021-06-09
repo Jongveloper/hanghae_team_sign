@@ -19,7 +19,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2? family = East + Sea + Dokdo & display = swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../static/join.css">
+    <link rel="stylesheet" media="screen and (min-width: 1200px)" href="../static/join_1200px.css"/>
     <script>
         function join() {
             $.ajax({
@@ -32,10 +35,10 @@
                     re_pw_give: $('#re_password').val()
                 },
                 success: function (response) {
-                    if (response['result'] == 'success'){
+                    if (response['result'] == 'success') {
                         alert('회원가입이 완료되었습니다!')
                         window.location.replace("/login")
-                    }else{
+                    } else {
                         alert(response['msg'])
                     }
                 }
@@ -47,9 +50,11 @@
 <body>
 
 <div class="top">
-    <h1>SoccerInfo
-        <span style="margin-left: 400px;">회원가입</span>
-    </h1>
+    <div class="top-wrap">
+        <h1 style="font-size: 40px;">SoccerInfo
+            <span class="top-text" style="font-size: 40px;">회원가입</span>
+        </h1>
+    </div>
 </div>
 
 <section class="join-form">
@@ -72,8 +77,8 @@
         <div class="int-area">
             <input type="password" name="re_password" id="re_password"
                    autocomplete="off" required>
-           <label for="re_password">{{ re_password }}</label>
-       </div>
+            <label for="re_password">{{ re_password }}</label>
+        </div>
         <div class="btn-area">
             <button type="danger" id="btn" class="btn btn-danger" onclick="join();">회원가입</button>
         </div>
@@ -102,11 +107,11 @@
             setTimeout(function () {
                 $('label').removeClass('warning');
             }, 1500);
-         } else if ($(re_password).val() == "") {
-             $(re_password).next('label').addClass('warning');
-             setTimeout(function () {
-                 $('label').removeClass('warning');
-             }, 1500);
+        } else if ($(re_password).val() == "") {
+            $(re_password).next('label').addClass('warning');
+            setTimeout(function () {
+                $('label').removeClass('warning');
+            }, 1500);
         }
     });
 </script>

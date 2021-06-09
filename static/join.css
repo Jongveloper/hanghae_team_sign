@@ -1,6 +1,15 @@
+*{
+    font-family: '동해 독도', 필기체;
+}
 .top{
     height: 50px;
     border-bottom: black solid 2px;
+}
+.top-wrap{
+    width: 100%;
+}
+.top-text{
+    margin-left: 430px;
 }
 /* 회원가입 폼*/
 .join-form{
