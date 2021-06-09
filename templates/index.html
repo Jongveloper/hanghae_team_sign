@@ -35,16 +35,16 @@
 
         function toggle_like(post_id) {
 
-            let $a_like = $(`#love`)
+            let $a_like = $(`#${post_id} a[aria-label='heart']`)
             let $i_like = $a_like.find("btn")
-            if ($i_like.hasClass("like")) {
+            if ($('i_like').hasClass("like")) {
                 console.log(post_id)
                 $.ajax({
                     type: "POST",
                     url: "/update_like",
                     data: {
                         post_id_give: post_id,
-                        action_give: "like"
+                        action_give: "unlike"
                     },
                     success: function (response) {
                         console.log("like")
@@ -58,7 +58,7 @@
                     url: "/update_like",
                     data: {
                         post_id_give: post_id,
-                        action_give: "unlike"
+                        action_give: "like"
                     },
                     success: function (response) {
                         console.log("unlike")
@@ -162,7 +162,7 @@
     <ul class="list">
 
         <li>
-            <input type="checkbox" class="checkbox soccer" id="expandable-input" onclick="like();">
+            <input type="checkbox" class="checkbox soccer" id="expandable-input">
             <label for="expandable-input" class="title"></label>
             <div class="desc">
                 The Premier League website employs cookies to make our website work and improve your user experience.

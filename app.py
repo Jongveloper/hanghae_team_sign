@@ -146,7 +146,7 @@ def update_like():
         doc = {
             "post_id": post_id_receive,
             "id": user_info["id"],
-            "league": league["league"]
+            # "league": league["league"]
         }
 
 
