@@ -1,15 +1,36 @@
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from time import sleep
-
 from pymongo import MongoClient
+from pathos.multiprocessing import ProcessingPool as Pool
 
 client = MongoClient('localhost', 27017)
 db = client.sign
 
-driver = webdriver.Chrome('./chromedriver')
+# 다중크롤링
+# class Parser():
+#     def __int__(self):
+#         self.pool = Pool(processes=3)
+#
+#         def open_browser(self, site):
+#             driver = webdriver.Chrome('./chromedriver.exe')
+#             driver.get(site)
+#
+#
+#     def multi_processing(self):
+#         sites = ["https://sports.news.naver.com/wfootball/record/index.nhn?category=epl&tab=team", "https://sports.news.naver.com/wfootball/record/index.nhn?category=bundesliga&tab=team","https://sports.news.naver.com/wfootball/record/index.nhn?category=seria&tab=team"]
+#         Pool.map()
 
-url = "https://sports.news.naver.com/wfootball/record/index.nhn?category=primera&tab=team"
+
+driver = webdriver.Chrome('./chromedriver')
+#epl
+url ="https://sports.news.naver.com/wfootball/record/index.nhn?category=epl&tab=team"
+#seria a
+# url ="https://sports.news.naver.com/wfootball/record/index.nhn?category=bundesliga&tab=team"
+# #bun
+# url ="https://sports.news.naver.com/wfootball/record/index.nhn?category=seria&tab=team"
+# #lig 1
+# url ="https://sports.news.naver.com/wfootball/record/index.nhn?category=ligue1&tab=team"
 
 driver.get(url)
 sleep(1)
@@ -41,8 +62,3 @@ for team in team_rank_list:
             'league': team_name
         }
         db.teams.insert_one(doc)
-
-
-name = team.select('.name')[0].text
-print(num, name)
-
