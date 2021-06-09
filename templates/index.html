@@ -115,6 +115,7 @@
 
 
 
+
     </script>
 
 </head>
@@ -595,14 +596,10 @@
         </li>
     </ul>
 </div>
-
-
-
-
-
 </body>
 <script>
-    function logout() {
+
+     function logout() {
         $.removeCookie('mytoken', {path: '/'});
         alert('로그아웃 되었습니다.')
         window.location.href = "/login"
@@ -611,5 +608,24 @@
     $(".like").click(function () {
         $(this).toggleClass("done");
     })
+
+
+    function get_ranking() {
+
+      $.ajax({
+        type: "GET",
+        url: '/ranking',
+        data: {},
+        success: function (response) {
+            let teams = response["ranking_list"]
+            for (let i = 0; i < teams.length; i++) {
+                let ranking = teams[i]
+                console.log(ranking)
+            }
+        }
+    });
+}
+
+
 </script>
 </html>
