@@ -147,8 +147,7 @@ def like_b():
             tname = team["t_name"]
             if bool(db.likes.find_one({"post_id": tname, "id": user_id})):
                 a.append(tname)
-
-
+            # count = db.likes.count_documents({"post_id": tname})
 
         print(a)
         return jsonify({"result": "success", 'msg': 'updated',  "post_id": a})
