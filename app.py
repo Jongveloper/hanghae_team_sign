@@ -14,22 +14,7 @@ import datetime
 import hashlib
 
 
-############################################
-## 크롤링 ####################################
-############################################
 
-#html 화면 보여주기
-@app.route('/')
-def home():
-    return render_template('index.html')
-
-
-@app.route('/컬렉션', methods=["GET"])
-def get_컬렉션이름():
-
-    순위리스트 = list(db.컬렉션이름.find({}, {'_id': False}))
-
-    return jsonify({'result': 'success', 'msg': list })
 
 
 
@@ -192,6 +177,23 @@ def update_like():
     except (jwt.ExpiredSignatureError, jwt.exceptions.DecodeError):
         return redirect(url_for("login"))
 
+
+############################################
+## 크롤링 ####################################
+############################################
+
+
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+
+@app.route('/컬렉션', methods=["GET"])
+def get_컬렉션이름():
+
+    순위리스트 = list(db.컬렉션이름.find({}, {'_id': False}))
+
+    return jsonify({'result': 'success', 'msg': list })
 
 
 
