@@ -112,12 +112,14 @@ def api_valid():
         return jsonify({'result': 'fail', 'msg' : '로그인 정보가 존재하지 않습니다.'})
 
 
-@app.route("/get_posts/<keyword>", methods=['GET'])
+@app.route("/get_posts", methods=['GET'])
 def get_posts():
     token_receive = request.cookies.get('mytoken')
     try:
         payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
-        recieve = request.args.get("w_give")
+        teams = list(db.teams.find({}))
+        for team in teams:
+            team["count_like"] = db.likes.count_documents({"post_id": team["t_name"]})
 
         posts = list(db.user.find({}))
         print(posts)
