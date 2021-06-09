@@ -1,9 +1,7 @@
-*{
-    font-family: '동해 독도', 필기체;
-}
 .top{
     height: 50px;
     border-bottom: white solid 2px;
+    font-family: '동해 독도', 필기체;
 }
 .top-text{
     margin-left: 430px;
@@ -52,6 +50,7 @@ video{
     font-size: 18px;
     color: white;
     transition: top .5s ease;
+    font-family : '해바라기', sans-serif;
 }
 
 .int-area label.warning{

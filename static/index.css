@@ -1,15 +1,13 @@
-* {
-    font-family: '동해 독도', 필기체;
-}
-
 .wrap {
     width: 1200px;
     margin: auto;
+    font-family : '해바라기', sans-serif;
 }
 
 .top {
     height: 50px;
     border-bottom: black solid 2px;
+    font-family: '동해 독도', 필기체;
 }
 
 .top-text {
@@ -21,7 +19,7 @@
 }
 
 .hate {
-    background-color: red;
+    background-color: transparent;
 }
 
 .aaa {

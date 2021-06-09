@@ -1,12 +1,12 @@
-*{
-    font-family: '동해 독도', 필기체;
-}
 .top{
     height: 50px;
     border-bottom: black solid 2px;
+    font-family: '동해 독도', 필기체;
+
 }
 .top-wrap{
     width: 100%;
+
 }
 .top-text{
     margin-left: 430px;
@@ -47,6 +47,7 @@
     font-size: 18px;
     color: black;
     transition: top .5s ease;
+    font-family : '해바라기', sans-serif;
 }
 /*회원가입 입력창 미기입시 빨간글씨 표시*/
 .int-area label.warning{
