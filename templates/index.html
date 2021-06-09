@@ -79,14 +79,14 @@
 
         function get_posts() {
             $("#post-box").empty()
-            let a = '에버턴 FC'
+
             $.ajax({
                 type: "GET",
-                url: "/get_posts"+ a,
+                url: "/get_posts",
                 data: {},
                 success: function (response) {
-                    let a = response["rec"]
-                    console.log(a)
+                    let team = response["team"]
+                    console.log(team["count_like"])
                     // if (response["result"] == "success") {
                     //     let posts = response["posts"]
                     //     for (let i = 0; i < posts.length; i++) {

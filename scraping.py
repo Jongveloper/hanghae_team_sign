@@ -42,5 +42,11 @@ for team in team_rank_list:
         }
         db.teams.insert_one(doc)
 
+<<<<<<< HEAD
 name = team.select('.name')[0].text
 print(num, name)
+=======
+
+
+
+>>>>>>> 9a2761da2b6d42be96f0f1ec81c6ae701fb1346d
