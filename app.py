@@ -188,12 +188,12 @@ def home():
     return render_template('index.html')
 
 
-@app.route('/컬렉션', methods=["GET"])
-def get_컬렉션이름():
+@app.route('/ranking', methods=["GET"])
+def get_ranking():
 
-    순위리스트 = list(db.컬렉션이름.find({}, {'_id': False}))
+    ranking_list = list(db.teams.find({}, {'_id': False}))
 
-    return jsonify({'result': 'success', 'msg': list })
+    return jsonify({'result': 'success', 'ranking_list': ranking_list })
 
 
 
