@@ -126,8 +126,9 @@ def get_posts():
             a = 0
             like = list(db.likes.find({"post_id": team["t_name"]}))
             for count in like:
-                    a += 1
-            team["count"] = str(a)
+                print(count)
+                a += 1
+                team["count"] = a
 
 
             # if bool(db.like.find_one({'name': team["t_name"]})):
@@ -167,8 +168,8 @@ def update_like():
         else:
             db.likes.delete_one(doc)
 
-
-        return jsonify({"result": "success", 'msg': 'updated'})
+        count = db.likes.count_documents({"post_id": post_id_receive})
+        return jsonify({"result": "success", 'msg': 'updated',  "count": count})
         # 좋아요 수 변경
 
     except (jwt.ExpiredSignatureError, jwt.exceptions.DecodeError):
