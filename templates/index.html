@@ -239,23 +239,24 @@
                         </div>
                     </div><!--westham-->
                 </div>
+                <table style="margin: auto;">
+                    <thead>
+                    <tr>
+                        <th scope="col">순위</th>
+                        <th scope="col">리그</th>
+                        <th scope="col">팀명</th>
+                    </tr>
+                    </thead>
+
+                    <tbody id="rank-box">
+                    <tr>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </li>
     </ul><!--프리미어 리그-->
-    <table>
-        <thead>
-        <tr>
-            <th scope="col">순위</th>
-            <th scope="col">리그</th>
-            <th scope="col">팀명</th>
-        </tr>
-        </thead>
 
-        <tbody id="rank-box">
-        <tr>
-        </tr>
-        </tbody>
-    </table>
     <ul class="list">
         <li>
             <input type="checkbox" class="checkbox serie" id="expandable-input2"/>
@@ -263,7 +264,7 @@
 
             <div class="desc">
                 The Premier League website employs cookies to make our website work and improve your user experience.
-                Essential 
+                Essential
                 cookies are required for the operation of our website. You may disable these but this may affect website
                 functionality. Non-essential cookies help us improve the functionality of our website by collecting
                 information
@@ -369,6 +370,20 @@
                         </div>
                     </div><!--토리노fc-->
                 </div>
+                <table>
+                    <thead>
+                    <tr>
+                        <th scope="col">순위</th>
+                        <th scope="col">리그</th>
+                        <th scope="col">팀명</th>
+                    </tr>
+                    </thead>
+
+                    <tbody id="rank-box-serie">
+                    <tr>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </li>
     </ul><!--세리에 리그-->
@@ -634,14 +649,22 @@
                     let lank = teams[i]['lank'];
                     let t_name = teams[i]['t_name'];
                     let league = teams[i]['league'];
-
-                    let temp_html = `<tr>
+                    if (league == "프리미어리그") {
+                        let temp_html = `<tr>
                                         <td>${lank}</td>
                                         <td>${league}</td>
                                         <td>${t_name}</td>
                                     </tr>`
-                    $('#rank-box').append(temp_html)
-
+                        $('#rank-box').append(temp_html)
+                    }
+                    if (league == "세리에 A") {
+                        let temp_html = `<tr>
+                                        <td>${lank}</td>
+                                        <td>${league}</td>
+                                        <td>${t_name}</td>
+                                    </tr>`
+                        $('#rank-box-serie').append(temp_html)
+                    }
                 }
             }
         });
