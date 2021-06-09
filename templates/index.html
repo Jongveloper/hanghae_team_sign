@@ -31,41 +31,100 @@
 
         function toggle_like(post_id) {
 
-                let $a_like = $(`#love`)
-                let $i_like = $a_like.find("btn")
-                if ($i_like.hasClass("like")) {
-                    console.log(post_id)
-                    $.ajax({
-                        type: "POST",
-                        url: "/update_like",
-                        data: {
-                            post_id_give: post_id,
-                            action_give: "like"
-                        },
-                        success: function (response) {
-                            console.log("like")
-                            $i_like.addClass("hate").removeClass("like")
+            let $a_like = $(`#love`)
+            let $i_like = $a_like.find("btn")
+            if ($i_like.hasClass("like")) {
+                console.log(post_id)
+                $.ajax({
+                    type: "POST",
+                    url: "/update_like",
+                    data: {
+                        post_id_give: post_id,
+                        action_give: "like"
+                    },
+                    success: function (response) {
+                        console.log("like")
+                        $i_like.addClass("hate").removeClass("like")
 
-                        }
-                    })
-                } else {
-                    $.ajax({
-                        type: "POST",
-                        url: "/update_like",
-                        data: {
-                            post_id_give: post_id,
-                            action_give: "unlike"
-                        },
-                        success: function (response) {
-                            console.log("unlike")
-                            $i_like.addClass("like").removeClass("hate")
+                    }
+                })
+            } else {
+                $.ajax({
+                    type: "POST",
+                    url: "/update_like",
+                    data: {
+                        post_id_give: post_id,
+                        action_give: "unlike"
+                    },
+                    success: function (response) {
+                        console.log("unlike")
+                        $i_like.addClass("like").removeClass("hate")
 
-                        }
-                    })
+                    }
+                })
 
-                }
             }
+        }
 
+        function get_posts() {
+            $("#post-box").empty()
+            $.ajax({
+                type: "GET",
+                url: "/get_posts",
+                data: {},
+                success: function (response) {
+                    if (response["result"] == "success") {
+                        let posts = response["posts"]
+                        for (let i = 0; i < posts.length; i++) {
+                            let post = posts[i]
+                            let time_post = new Date(post["date"])
+                            let class_heart = ""
+                            if (post["heart_by_me"]) {
+                                class_heart = "fa-heart"
+                            } else {
+                                class_heart = "fa-heart-o"
+                            }
+                            let html_temp = `<div class="box" id="${post["_id"]}">
+                                        <article class="media">
+                                            <div class="media-left">
+                                                <a class="image is-64x64" href="/user/${post['username']}">
+                                                    <img class="is-rounded" src="/static/${post['profile_pic_real']}"
+                                                         alt="Image">
+                                                </a>
+                                            </div>
+                                            <div class="media-content">
+                                                <div class="content">
+                                                    <p>
+                                                        <strong>${post['profile_name']}</strong> <small>@${post['username']}</small> <small>${time_post}</small>
+                                                        <br>
+                                                        ${post['comment']}
+                                                    </p>
+                                                </div>
+                                                <nav class="level is-mobile">
+                                                    <div class="level-left">
+                                                        <a class="level-item is-sparta" aria-label="heart" onclick="toggle_like('${post['_id']}', 'heart')">
+                                                            <span class="icon is-small"><i class="fa fa-heart"
+                                                                                           aria-hidden="true"></i></span>&nbsp;<span class="like-num">2.7k</span>
+                                                        </a>
+                                                    </div>
+
+                                                </nav>
+                                            </div>
+                                        </article>
+                                    </div>`
+                            $("#post-box").append(html_temp)
+                        }
+                    }
+                }
+            })
+        }
+
+        function attach(){
+            for(let i = 0; i<5; i++)
+            {
+
+            }
+        }
 
     </script>
 
@@ -133,7 +192,7 @@
 
 
 
-    <a id="love" aria-label='heart' onclick="toggle_like('맨시')">
+    <a id="love" aria-label='heart' onclick="toggle_like('맨시') get_posts()">
         <btn class="like">
             👍
         </btn>
