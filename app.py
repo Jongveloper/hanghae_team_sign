@@ -114,31 +114,25 @@ def api_valid():
         return jsonify({'result': 'fail', 'msg' : '로그인 정보가 존재하지 않습니다.'})
 
 
-@app.route("/get_posts", methods=['GET'])
-def get_posts():
+@app.route('/like_bu', methods=['POST'])
+def like_b():
     token_receive = request.cookies.get('mytoken')
     try:
         payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
-        print(payload)
+        user_id = payload["id"]
         teams = list(db.teams.find({}))
-
+        a = []
         for team in teams:
-            a = 0
-            like = list(db.likes.find({"post_id": team["t_name"]}))
-            for count in like:
-                print(count)
-                a += 1
-                team["count"] = a
+            tname = team["t_name"]
+            if bool(db.likes.find_one({"post_id": tname, "id": user_id})):
+                a.append(tname)
 
 
-            # if bool(db.like.find_one({'name': team["t_name"]})):
-            #
-            #     db.like.update_one({'name': team["t_name"]}, {'$set': {'count': a}})
-            # else:
-            #     doc = {'count': a, 'name': team["t_name"]}
-            #     db.like.insert_one(doc)
-        print(teams)
-        return jsonify({"result": "success", "msg": "포스팅을 가져왔습니다.", "data": teams})
+
+        print(a)
+        return jsonify({"result": "success", 'msg': 'updated',  "post_id": a})
+        # 좋아요 수 변경
+
     except (jwt.ExpiredSignatureError, jwt.exceptions.DecodeError):
         return redirect(url_for("login"))
 
@@ -170,6 +164,13 @@ def update_like():
             db.likes.delete_one(doc)
 
         count = db.likes.count_documents({"post_id": post_id_receive})
+        # u_id = payload["id"]
+        # a = 0
+        # if bool(db.likes.find_one({"id": u_id, "post_id": post_id_receive })):
+        #     a = 1
+        # else:
+        #     a = 2
+
         return jsonify({"result": "success", 'msg': 'updated',  "count": count})
         # 좋아요 수 변경
 
