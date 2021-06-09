@@ -1,9 +1,8 @@
 from flask import Flask, render_template, jsonify, request, session, redirect, url_for
 
 app = Flask(__name__)
-
 from pymongo import MongoClient
-from werkzeug.utils import secure_filename
+
 
 client = MongoClient('localhost',27017)
 db= client.sign
@@ -118,17 +117,22 @@ def get_posts():
     token_receive = request.cookies.get('mytoken')
     try:
         payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
+        teams = list(db.teams.find({}))
+        for team in teams:
+            team["count_like"] = db.likes.count_documents({"post_id": team["t_name"]})
+
         posts = list(db.user.find({}))
         print(posts)
         for post in posts:
             post["_id"] = str(post["_id"])
-            post["count_heart"] = db.like.count_documents({"post_id": post["_id"], "type": "heart"})
+            post["count_heart"] = db.likes.count_documents({"post_id": post["_id"], "type": "heart"})
             post["heart_by_me"] = bool(db.likes.find_one({"post_id": post["_id"], "type": "heart", "username": payload['id']}))
-        return jsonify({"result": "success", "msg": "포스팅을 가져왔습니다."})
+        return jsonify({"result": "success", "msg": "포스팅을 가져왔습니다.", "rec": recieve})
     except (jwt.ExpiredSignatureError, jwt.exceptions.DecodeError):
-        return redirect(url_for("home"))
+        return redirect(url_for("login"))
 
 # 좋아요 api
+
 
 @app.route('/update_like', methods=['POST'])
 def update_like():
@@ -138,9 +142,11 @@ def update_like():
         user_info = db.user.find_one({"id": payload["id"]})
         post_id_receive = request.form["post_id_give"]
         action_receive = request.form["action_give"]
+        league = db.teams.find_one({'t_name': post_id_receive})
         doc = {
             "post_id": post_id_receive,
-            "username": user_info["name"]
+            "id": user_info["id"],
+            "league": league["league"]
         }
 
 
