@@ -1,8 +1,13 @@
+*{
+    font-family: '동해 독도', 필기체;
+}
 .top{
     height: 50px;
     border-bottom: white solid 2px;
 }
-
+.top-text{
+    margin-left: 430px;
+}
 video{
     position: fixed;
     top : 0;
