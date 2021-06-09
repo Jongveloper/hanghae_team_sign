@@ -116,6 +116,7 @@
 
 
 
+
     </script>
 
 </head>
@@ -596,6 +597,10 @@
         </li>
     </ul>
 </div>
+<button onclick="get_ranking();">
+    1234
+</button>
+
 </body>
 <script>
 
@@ -610,7 +615,7 @@
     })
 
 
-    function get_ranking() {
+      function get_ranking() {
 
       $.ajax({
         type: "GET",
@@ -625,6 +630,7 @@
         }
     });
 }
+
 
 
 </script>
