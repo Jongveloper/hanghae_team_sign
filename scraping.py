@@ -9,7 +9,7 @@ db = client.sign
 
 driver = webdriver.Chrome('./chromedriver')
 
-url = "https://sports.news.naver.com/wfootball/record/index.nhn?category=primera&tab=team"
+url = "https://sports.news.naver.com/wfootball/record/index.nhn?category=ligue1&tab=team"
 
 driver.get(url)
 sleep(1)
