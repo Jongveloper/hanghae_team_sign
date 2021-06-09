@@ -15,6 +15,12 @@
     height: 30px;
     border: 1px solid white;
     border-radius: 40px;
+    position: relative;
+    visibility: hidden;
+    margin-bottom: 20px;
+}
+.team:hover >a > btn{
+    visibility: visible;
 }
 .like:hover {
     text-shadow: 0 0 0 #ea0;
@@ -26,6 +32,8 @@
     color: transparent;
     text-shadow: 0 0 0 #777;
 }
+
+
 
 .list {
     list-style: none;
@@ -128,12 +136,12 @@
 }
 
 .team-logo::-webkit-scrollbar {
-    height: 2px;
-    background-color: whitesmoke;
+    height: 3px;
+    background-color: bisque;
 }
 
 .team-logo::-webkit-scrollbar-thumb {
-    background-color: black;
+    background-color: rebeccapurple;
 }
 
 /*.top{*/
