@@ -32,7 +32,6 @@ for team in team_rank_list:
             '순위': num,
             't_name': name
 
-
         }
 
     else:
@@ -43,7 +42,5 @@ for team in team_rank_list:
         }
         db.teams.insert_one(doc)
 
- name = team.select('.name')[0].text
- print(num, name)
-
-
+name = team.select('.name')[0].text
+print(num, name)
