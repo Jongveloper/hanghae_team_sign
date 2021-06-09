@@ -29,7 +29,7 @@ def get_컬렉션이름():
 
     순위리스트 = list(db.컬렉션이름.find({}, {'_id': False}))
 
-    return jsonify({'result': 'success', 'msg': list 연결되었습니다})
+    return jsonify({'result': 'success', 'msg': list })
 
 
 
