@@ -395,6 +395,20 @@
         </li>
     </ul>
 </div>
+
+    function make_card(i, ???)
+    let html_temp = `<div class="card" id="card-${i}">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="#" class="matjip-title">${순위['title']}</a></h5>
+                            <h6 class="card-subtitle mb-2 text-muted">${순위['category']}</h6>
+                            <p class="card-text">${순위['address']}</p>
+                            <p class="card-text" style="color:blue;">${순위['show']}</p>
+                        </div>
+                     </div>`;
+    $('#matjip-box').append(html_temp);
+
+
+
 </body>
 <script>
     function logout() {

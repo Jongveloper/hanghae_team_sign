@@ -1,17 +1,18 @@
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from time import sleep
+
 from pymongo import MongoClient
-import time
+
 client = MongoClient('localhost', 27017)
 db = client.sign
 
 driver = webdriver.Chrome('./chromedriver')
 
-url = "https://sports.news.naver.com/wfootball/record/index.nhn?category=epl&tab=team"
-print(url)
+url = "https://sports.news.naver.com/wfootball/record/index.nhn?category=primera&tab=team"
+
 driver.get(url)
-sleep(2)
+sleep(1)
 
 req = driver.page_source
 driver.quit()
@@ -37,7 +38,11 @@ for team in team_rank_list:
         doc = {
             'lank': num,
             't_name': name,
-            'league': team_name,
-            'count': ''
+            'league': team_name
         }
         db.teams.insert_one(doc)
+
+
+name = team.select('.name')[0].text
+print(num, name)
+
