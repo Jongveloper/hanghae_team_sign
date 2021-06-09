@@ -118,9 +118,14 @@ def get_posts():
     try:
         payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
         teams = list(db.teams.find({}))
+        a = 0
         for team in teams:
-            team["count_like"] = db.likes.count_documents({"post_id": teams["t_name"]})
-            team["team_name"] = teams["t_name"]
+            print(team)
+            # if bool(db.likes.find_one({"post_id":teams["t_name"]})):
+            #     team["count_like"] = a
+            #     team["count_like"] += 1
+            #
+            # team["team_name"] = teams["t_name"]
 
         return jsonify({"result": "success", "msg": "포스팅을 가져왔습니다.", "team": team})
     except (jwt.ExpiredSignatureError, jwt.exceptions.DecodeError):
