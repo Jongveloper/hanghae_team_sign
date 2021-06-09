@@ -53,7 +53,6 @@
                     success: function (response) {
                         console.log("like")
                         $i_like.addClass("hate").removeClass("like")
-                        $a_like.find("span.like-num").text(response["count"])
 
                     }
                 })
@@ -70,14 +69,19 @@
 
                         console.log("unlike")
                         $i_like.addClass("like").removeClass("hate")
-                        $a_like.find("span.like-num").text(response["count"])
 
                     }
                 })
 
             }
         }
+        function team(){
 
+
+
+
+
+        }
 
         function get_posts() {
             $("#post-box").empty()
@@ -162,7 +166,7 @@
     </div>
 </div>
 
-<button onclick="team()">
+<button onclick="get_posts()">
     fdsa
 </button>
 
@@ -188,7 +192,6 @@
                             <btn class="like">
                                 👍
                             </btn>
-                            <span class="like-num"></span>
                         </a>
                         <div class="logo-list everton" id="everton">
                             <img class="logo-image"
@@ -200,7 +203,6 @@
                             <btn class="like">
                                 👍
                             </btn>
-                            <span class="like-num"></span>
                         </a>
                         <div class="logo-list ffc" id="ffc">
                             <img class="logo-image"
@@ -208,11 +210,10 @@
                         </div>
                     </div><!--ffc-->
                     <div class="team">
-                        <a id="레스터시티FC" aria-label='heart' class="like-area" onclick="toggle_like('레스터 시티 FC')">
+                        <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('leicester')">
                             <btn class="like">
                                 👍
                             </btn>
-                            <span class="like-num"></span>
                         </a>
                         <div class="logo-list leicester" id="leicester">
                             <img class="logo-image"
@@ -220,11 +221,10 @@
                         </div>
                     </div><!--leicester-->
                     <div class="team">
-                        <a id="토트넘홋스퍼FC" aria-label='heart' class="like-area" onclick="toggle_like('토트넘 홋스퍼 FC')">
+                        <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('토트넘')">
                             <btn class="like">
                                 👍
                             </btn>
-                            <span class="like-num"></span>
                         </a>
                         <div class="logo-list tottenham" id="tottenham">
                             <img class="logo-image"
@@ -232,11 +232,10 @@
                         </div>
                     </div><!--tottenham-->
                     <div class="team">
-                        <a id="울버햄튼원더러스FC" aria-label='heart' class="like-area" onclick="toggle_like('울버햄튼 원더러스 FC')">
+                        <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('wolver')">
                             <btn class="like">
                                 👍
                             </btn>
-                            <span class="like-num"></span>
                         </a>
                         <div class="logo-list wolver" id="wolver">
                             <img class="logo-image"
@@ -244,11 +243,10 @@
                         </div>
                     </div><!--wolver-->
                     <div class="team">
-                        <a id="번리FC" aria-label='heart' class="like-area" onclick="toggle_like('번리 FC')">
+                        <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('번리')">
                             <btn class="like">
                                 👍
                             </btn>
-                            <span class="like-num"></span>
                         </a>
                         <div class="logo-list burnley" id="burnley">
                             <img class="logo-image"
@@ -256,11 +254,10 @@
                         </div>
                     </div><!--burnley-->
                     <div class="team">
-                        <a id="뉴캐슬유나이티드FC" aria-label='heart' class="like-area" onclick="toggle_like('뉴캐슬 유나이티드 FC')">
+                        <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('뉴캐슬')">
                             <btn class="like">
                                 👍
                             </btn>
-                            <span class="like-num"></span>
                         </a>
                         <div class="logo-list newcastle" id="newcastle">
                             <img class="logo-image"
@@ -268,11 +265,10 @@
                         </div>
                     </div><!--newcastle-->
                     <div class="team">
-                        <a id="웨스트햄유나이티드FC" aria-label='heart' class="like-area" onclick="toggle_like('웨스트햄 유나이티드 FC')">
+                        <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('웨스트햄')">
                             <btn class="like">
                                 👍
                             </btn>
-                            <span class="like-num"></span>
                         </a>
                         <div class="logo-list westham" id="westham">
                             <img class="logo-image"
@@ -302,11 +298,10 @@
 
                 <div class="team-logo-italy">
                     <div class="team">
-                        <a id="FC인터밀란" aria-label='heart' class="like-area" onclick="toggle_like('FC 인터 밀란')">
+                        <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('인터밀란')">
                             <btn class="like">
                                 👍
                             </btn>
-                            <span class="like-num"></span>
                         </a>
                         <div class="logo-list intermilan" id="인터밀란">
                             <img class="logo-image"
@@ -314,11 +309,10 @@
                         </div>
                     </div><!--인터밀란-->
                     <div class="team">
-                        <a id="AC밀란" aria-label='heart' class="like-area" onclick="toggle_like('AC 밀란')">
+                        <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('ac밀란')">
                             <btn class="like">
                                 👍
                             </btn>
-                            <span class="like-num"></span>
                         </a>
                         <div class="logo-list acmilan" id="ac밀란">
                             <img class="logo-image"
@@ -326,11 +320,10 @@
                         </div>
                     </div><!--ac밀란-->
                     <div class="team">
-                        <a id="아탈란타BC" aria-label='heart' class="like-area" onclick="toggle_like('아탈란타 BC')">
+                        <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('아탈란타')">
                             <btn class="like">
                                 👍
                             </btn>
-                            <span class="like-num"></span>
                         </a>
                         <div class="logo-list atal" id="아탈란타">
                             <img class="logo-image"
@@ -338,11 +331,10 @@
                         </div>
                     </div><!--아탈란타-->
                     <div class="team">
-                        <a id="유벤투스FC" aria-label='heart' class="like-area" onclick="toggle_like('유벤투스 FC')">
+                        <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('유벤투스')">
                             <btn class="like">
                                 👍
                             </btn>
-                            <span class="like-num"></span>
                         </a>
                         <div class="logo-list juventus" id="tottenham">
                             <img class="logo-image"
@@ -350,11 +342,10 @@
                         </div>
                     </div><!--유벤투스-->
                     <div class="team">
-                        <a id="SSC나폴리" aria-label='heart' class="like-area" onclick="toggle_like('SSC 나폴리')">
+                        <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('ssc나폴리')">
                             <btn class="like">
                                 👍
                             </btn>
-                            <span class="like-num"></span>
                         </a>
                         <div class="logo-list ssc" id="ssc">
                             <img class="logo-image"
@@ -362,11 +353,10 @@
                         </div>
                     </div><!--ssc나폴리-->
                     <div class="team">
-                        <a id="SS라치오" aria-label='heart' class="like-area" onclick="toggle_like('SS 라치오')">
+                        <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('ss라치오')">
                             <btn class="like">
                                 👍
                             </btn>
-                            <span class="like-num"></span>
                         </a>
                         <div class="logo-list ssl" id="ssl">
                             <img class="logo-image"
@@ -374,11 +364,10 @@
                         </div>
                     </div><!--ss라치오-->
                     <div class="team">
-                        <a id="US사수올로칼초" aria-label='heart' class="like-area" onclick="toggle_like('US 사수올로 칼초')">
+                        <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('사소올로칼초')">
                             <btn class="like">
                                 👍
                             </btn>
-                            <span class="like-num"></span>
                         </a>
                         <div class="logo-list saso" id="saso">
                             <img class="logo-image"
@@ -386,11 +375,10 @@
                         </div>
                     </div><!--사소올로칼초-->
                     <div class="team">
-                        <a id="토리노FC" aria-label='heart' class="like-area" onclick="toggle_like('토리노 FC')">
+                        <a id="love" aria-label='heart' class="like-area" onclick="toggle_like('토리노')">
                             <btn class="like">
                                 👍
                             </btn>
-                            <span class="like-num"></span>
                         </a>
                         <div class="logo-list torino" id="torino">
                             <img class="logo-image"
@@ -436,20 +424,6 @@
         </li>
     </ul>
 </div>
-
-    function make_card(i, ???)
-    let html_temp = `<div class="card" id="card-${i}">
-                        <div class="card-body">
-                            <h5 class="card-title"><a href="#" class="matjip-title">${순위['title']}</a></h5>
-                            <h6 class="card-subtitle mb-2 text-muted">${순위['category']}</h6>
-                            <p class="card-text">${순위['address']}</p>
-                            <p class="card-text" style="color:blue;">${순위['show']}</p>
-                        </div>
-                     </div>`;
-    $('#matjip-box').append(html_temp);
-
-
-
 </body>
 <script>
     function logout() {
