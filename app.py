@@ -143,7 +143,6 @@ def like_b():
 
 # 좋아요 api
 
-
 @app.route('/update_like', methods=['POST'])
 def update_like():
     token_receive = request.cookies.get('mytoken')
@@ -175,7 +174,7 @@ def update_like():
         # 좋아요 수 변경
 
     except (jwt.ExpiredSignatureError, jwt.exceptions.DecodeError):
-        return redirect(url_for("login"))
+        return redirect(url_for("login", msg="로그인 시간이 만료되었습니다."))
 
 
 ############################################
