@@ -1,15 +1,20 @@
 from bs4 import BeautifulSoup
 from selenium import webdriver
+from pyvirtualdisplay import Display
 from time import sleep
 
 from pymongo import MongoClient
 
-client = MongoClient('localhost', 27017)
+client = MongoClient('mongodb://test:test@localhost', 27017)
 db = client.sign
 
-driver = webdriver.Chrome('./chromedriver')
+display = Display(visible=0, size=(1920,1080))
+display.start()
 
-url = "https://sports.news.naver.com/wfootball/record/index.nhn?category=ligue1&tab=team"
+path = '/home/ubuntu/chromedriver'
+driver = webdriver.Chrome(path)
+
+url = "https://sports.news.naver.com/wfootball/record/index.nhn?category=seria&tab=team"
 
 driver.get(url)
 sleep(1)
