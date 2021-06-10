@@ -1,8 +1,9 @@
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from time import sleep
-
 from pymongo import MongoClient
+
+
 
 client = MongoClient('localhost', 27017)
 db = client.sign
@@ -10,10 +11,16 @@ db = client.sign
 driver = webdriver.Chrome('./chromedriver')
 
 
-
+#영국
 # # url = "https://sports.news.naver.com/wfootball/record/index.nhn?category=epl&tab=team"
+
+#독일
 # url = "https://sports.news.naver.com/wfootball/record/index.nhn?category=bundesliga&tab=team"
+
+#이탈리아
 url = "https://sports.news.naver.com/wfootball/record/index.nhn?category=seria&tab=team"
+
+#프랑스
 # # url = "https://sports.news.naver.com/wfootball/record/index.nhn?category=ligue1&tab=team"
 
 driver.get(url)
