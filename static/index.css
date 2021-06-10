@@ -9,7 +9,7 @@
     border-bottom: black solid 2px;
     font-family: '동해 독도', 필기체;
 }
-table{
+.table{
     text-align: center;
     margin: auto;
 }
@@ -18,6 +18,13 @@ table{
     width: 100%;
     height: 450px;
     overflow: auto;
+
+}
+
+#list_table th {
+    position: sticky;
+    top: 0px;
+    background-color: yellow;
 }
 
 .top-text {
@@ -170,7 +177,7 @@ table{
 }
 
 .team-logo::-webkit-scrollbar {
-    height: 4px;
+    height: 10px;
     background-color: bisque;
     
 }
@@ -193,7 +200,7 @@ table{
 }
 
 .team-logo-italy::-webkit-scrollbar {
-    height: 4px;
+    height: 10px;
     background-color: bisque;
 }
 
@@ -214,11 +221,14 @@ table{
     width: 150px;
 }
 .team-logo-bundesliga::-webkit-scrollbar{
-    height: 4px;
+    height: 10px;
+
+
     background-color: bisque;
 }
 .team-logo-bundesliga::-webkit-scrollbar-thumb{
     background-color: crimson;
+
 }
 .team-logo-one{
     widht: 1000px;
@@ -232,8 +242,10 @@ table{
     width: 150px;
 }
 .team-logo-one::-webkit-scrollbar{
-    height: 4px;
+    height: 10px;
+
     background-color: bisque;
+
 }
 .team-logo-one::-webkit-scrollbar-thumb{
     background-color: lawngreen;
