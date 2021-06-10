@@ -68,11 +68,13 @@ def join_save():
         if check_duplicate_user['id'] == id_receive:
             return jsonify({'result': 'fail', 'msg': '아이디가 중복되었습니다.'})
 
+    if id_receive == "" or name_receive == "" or pw_receive == "":
+        return jsonify({'result':'fail', 'msg': "모두 입력해주세요!"})
+
     if pw_receive != re_pw_receive:
         return jsonify({'result':'fail', 'msg': '비밀번호가 일치하지 않습니다.'})
 
-    if id_receive == "" or name_receive == "" or pw_receive == "":
-        return jsonify({'result':'fail', 'msg': "모두 입력해주세요!"})
+
 
     pw_hash = hashlib.sha256(pw_receive.encode('utf-8')).hexdigest()
 
@@ -97,6 +99,8 @@ def api_login():
         }
         # payload 암호화
         token = jwt.encode(payload, SECRET_KEY, algorithm='HS256')
+    if id_receive == "" or pw_receive == "":
+        return jsonify({'result': 'fail', 'msg': "모두 입력해주세요!"})
 
         return jsonify({'result': 'success', 'token': token})
     else:
